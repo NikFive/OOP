@@ -1,4 +1,10 @@
+package ru.nsu.fit.konstantinov.task_1_1_1
+
 class MyHeapSort {
+    companion object Factory {
+        fun create(): MyHeapSort = MyHeapSort()
+    }
+
     fun heapSort(array: IntArray) {
         val length = array.size
         for (i in length - 1 downTo 0) {
