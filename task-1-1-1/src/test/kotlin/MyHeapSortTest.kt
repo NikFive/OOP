@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test
 import ru.nsu.fit.konstantinov.task_1_1_1.MyHeapSort.Factory.heapSort
+import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
 class MyHeapSortTest {
