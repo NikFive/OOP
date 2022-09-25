@@ -1,7 +1,20 @@
 package ru.nsu.fit.konstantinov.task_1_1_1
 
+/**
+ * A group sorted by heap sorting.
+ *
+ * This class implements an interface for using heap sorting.
+ *
+ */
 class MyHeapSort {
+    /**
+     * Companion object for simplifying the interface of interaction with heap sorting.
+     */
     companion object Factory {
+        /**
+         * Sorts an array of integers using heap sorting.
+         * @param array array of integers to sort.
+         */
         fun heapSort(array: IntArray) {
             val length = array.size
             for (i in length - 1 downTo 0) {
