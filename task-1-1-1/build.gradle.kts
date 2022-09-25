@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.10"
     id("org.jetbrains.dokka") version "1.7.10"
+    jacoco
     application
 }
 
@@ -20,10 +21,53 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(false)
+        csv.required.set(false)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+    }
+}
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.5".toBigDecimal()
+            }
+        }
+
+        rule {
+            isEnabled = false
+            element = "CLASS"
+            includes = listOf("org.gradle.*")
+
+            limit {
+                counter = "LINE"
+                value = "TOTALCOUNT"
+                maximum = "0.3".toBigDecimal()
+            }
+        }
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.8"
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.dokkaJavadoc.configure {
+    outputDirectory.set(file("javadoc"))
 }
 
 application {
