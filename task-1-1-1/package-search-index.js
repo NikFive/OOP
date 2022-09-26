@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"[root]","url":"[root]/package-summary.html"}, {"l":"ru.nsu.fit.konstantinov.task_1_1_1","url":"ru/nsu/fit/konstantinov/task_1_1_1/package-summary.html"}, {"l":"All packages","url":"index.html"}]
