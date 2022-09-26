@@ -39,8 +39,7 @@ jobs:
           min-coverage-changed-files: 80
 
       - name: Generate javadoc
-        run: ./gradlew javadoc
-
+        run: ./gradlew dokkaJavadoc
 
       - name: Publish javadoc
         uses: JamesIves/github-pages-deploy-action@v4
