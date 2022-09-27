@@ -1,4 +1,6 @@
-import ru.nsu.fit.konstantinov.task_1_1_1.MyHeapSort.Factory.heapSort
+package ru.nsu.fit.konstantinov.task_1_1_1
+
+import ru.nsu.fit.konstantinov.task_1_1_1.MyHeapSort.Companion.heapSort
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 

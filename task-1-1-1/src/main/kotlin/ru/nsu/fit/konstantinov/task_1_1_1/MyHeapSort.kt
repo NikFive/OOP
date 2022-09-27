@@ -10,7 +10,7 @@ class MyHeapSort {
     /**
      * Companion object for simplifying the interface of interaction with heap sorting.
      */
-    companion object Factory {
+    companion object {
         /**
          * Sorts an array of integers using heap sorting.
          * @param array array of integers to sort.
