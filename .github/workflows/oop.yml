@@ -5,21 +5,24 @@ name: CI
 # Controls when the workflow will run
 on:
   pull_request:
-    branches: [ "master" ]  
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./${{ github.event.pull_request.title }}
+#    defaults:
+#      run:
+#        working-directory: ./${{ github.event.pull_request.title }}
     steps:
       - uses: actions/checkout@v3
       
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-    
+
+      - name: chmod
+        run: chmod +x gradlew
+
       - name: Execute Gradle build
         run: ./gradlew build
 
@@ -36,7 +39,7 @@ jobs:
           min-coverage-changed-files: 80
 
       - name: Generate javadoc
-        run: ./gradlew javadoc
+        run: ./gradlew dokkaJavadoc
 
       - name: Publish javadoc
         uses: JamesIves/github-pages-deploy-action@v4
@@ -44,7 +47,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           clean: true
-          folder: ${{ github.event.pull_request.title }}/build/docs/javadoc
+          folder: ${{ github.event.pull_request.title }}/javadoc
           target-folder: ${{ github.event.pull_request.title }}
 
   checkstyle:
