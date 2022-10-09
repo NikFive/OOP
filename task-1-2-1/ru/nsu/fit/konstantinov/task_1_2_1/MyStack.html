@@ -117,7 +117,7 @@ var pathtoroot = "../../../../../";
 public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&lt;T extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
 
                     </pre>
-                    <div class="block"></div>
+                    <div class="block"><p>Implementation of a regular stack</p><p>This class allows you to create and use a data structure such as a stack.</p></div>
                 </li>
             </ul>
         </div>
@@ -248,7 +248,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyStack.html#push(T)>push</a>(<a href=MyStack.html>T</a> elem) </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Adds an <i>elem</i> to the stack.</td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
@@ -256,7 +256,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyStack.html#pop()>pop</a>() </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Pulls out an <i>elem</i> of the stack.</td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
@@ -264,7 +264,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyStack.html#popStack(Integer)>popStack</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> count) </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Pulls out a stack of <i>count</i> length from the stack.</td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
@@ -272,7 +272,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyStack.html#pushStack(MyStack)>pushStack</a>(<a href=MyStack.html>MyStack</a>&lt;<a href=MyStack.html>T</a>&gt; elems) </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Adds another stack to original stack</td>
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
@@ -280,7 +280,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyStack.html#count()>count</a>() </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Gets size of the stack</td>
                                         </tr>
                                         
                                         </tbody>
@@ -346,7 +346,16 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                     <li class="blockList">
                                         <h4>push</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MyStack.html#push(T)>push</a>(<a href=MyStack.html>T</a> elem)</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Adds an <i>elem</i> to the stack.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>elem</code> - The element of the <i>T</i> type to add to the stack</dd>
+                                            
+                                            
+                                        </dl>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -361,7 +370,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                     <li class="blockList">
                                         <h4>pop</h4>
                                         <pre class="methodSignature"> final <a href=MyStack.html>T</a> <a href=MyStack.html#pop()>pop</a>()</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Pulls out an <i>elem</i> of the stack.</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -376,7 +385,16 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                     <li class="blockList">
                                         <h4>popStack</h4>
                                         <pre class="methodSignature"> final <a href=MyStack.html>MyStack</a>&lt;<a href=MyStack.html>T</a>&gt; <a href=MyStack.html#popStack(Integer)>popStack</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> count)</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Pulls out a stack of <i>count</i> length from the stack.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>count</code> - the number of elements to pull from the stack</dd>
+                                            
+                                            
+                                        </dl>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -391,7 +409,16 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                     <li class="blockList">
                                         <h4>pushStack</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MyStack.html#pushStack(MyStack)>pushStack</a>(<a href=MyStack.html>MyStack</a>&lt;<a href=MyStack.html>T</a>&gt; elems)</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Adds another stack to original stack</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>elems</code> - stack to push</dd>
+                                            
+                                            
+                                        </dl>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -406,7 +433,7 @@ public final class <span class="typeNameLabel"><a href=MyStack.html>MyStack</a>&
                                     <li class="blockList">
                                         <h4>count</h4>
                                         <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=MyStack.html#count()>count</a>()</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Gets size of the stack</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
