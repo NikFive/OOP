@@ -1,5 +1,5 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:ru.nsu.fit.konstantinov.task_1_2_2/MyTree.Node///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_2/MyTree.Node.html
 ru.nsu.fit.konstantinov.task_1_2_2
 
