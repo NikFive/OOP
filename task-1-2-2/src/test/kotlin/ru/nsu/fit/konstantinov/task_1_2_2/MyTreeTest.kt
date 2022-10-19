@@ -8,14 +8,49 @@ class MyTreeTest {
     @Test
     fun testSimple() {
         val tree = MyTree(1)
+        assertEquals(tree.isEmpty(), false)
         tree.add(2)
         val nodeB = tree.add(3)
-        tree.add(nodeB,4)
+        tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
         var array = emptyArray<Int>()
-        val arrayRes = arrayOf(1, 2, 3, 4)
+        val arrayRes = arrayOf(1, 2, 3, 4, 0)
         for (i in tree) {
             array += i
         }
         assertContentEquals(array, arrayRes)
+    }
+
+    @Test
+    fun testEmptyTree() {
+        val tree = MyTree<Int>()
+        assertEquals(tree.isEmpty(), true)
+        val nodeA = tree.add(1)
+        tree.add(nodeA, 2)
+        val nodeB = tree.add(3)
+        tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
+        var array = emptyArray<Int>()
+        val arrayRes = arrayOf(1, 2, 3, 4, 0)
+        for (i in tree) {
+            array += i
+        }
+        assertContentEquals(array, arrayRes)
+    }
+
+    @Test
+    fun testContains() {
+        val tree = MyTree(1)
+        assertEquals(tree.isEmpty(), false)
+        tree.add(2)
+        val nodeB = tree.add(3)
+        tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
+        var array = emptyArray<Int>()
+        for (i in tree) {
+            array += i
+        }
+        assertEquals(true, tree.contains(1))
+        assertEquals(false, tree.contains(-1))
     }
 }

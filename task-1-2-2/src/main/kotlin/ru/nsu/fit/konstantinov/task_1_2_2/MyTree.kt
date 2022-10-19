@@ -1,20 +1,28 @@
 package ru.nsu.fit.konstantinov.task_1_2_2
 
-class MyTree<T>(value: T) : Collection<T> {
-    var root: Node<T>
+class MyTree<T>(value: T? = null) : Collection<T> {
+    private var root: Node<T>? = null
 
     init {
-        this.root = Node(value)
+        this.root
+        if (value == null) {
+            this.root = null
+        } else {
+            this.root = Node(value)
+        }
     }
 
-    fun add(node: Node<T>, element: T) {
-        val newElem = Node(element)
-        node.children.add(newElem)
+    fun add(node: Node<T>, value: T) {
+        node.children.add(Node(value))
     }
 
-    fun add(element: T): Node<T> {
-        val newElem = Node(element)
-        root.children.add(newElem)
+    fun add(value: T): Node<T> {
+        val newElem = Node(value)
+        if (root == null) {
+            root = newElem
+        } else {
+            root?.children?.add(newElem)
+        }
         return newElem
     }
 
@@ -22,18 +30,14 @@ class MyTree<T>(value: T) : Collection<T> {
      * Returns the size of the collection.
      */
     override val size: Int
-        get() = root.children.size
+        get() = root?.children?.size ?: 0
 
     /**
      * Returns `true` if the collection is empty (contains no elements), `false` otherwise.
      */
-    override fun isEmpty(): Boolean {
-        return root.value == null
-    }
+    override fun isEmpty(): Boolean = root == null
 
-    override fun iterator(): Iterator<T> {
-        return DFSIterator(root)
-    }
+    override fun iterator(): Iterator<T> = DFSIterator(root)
 
     /**
      * Checks if all elements in the specified collection are contained in this collection.
@@ -52,7 +56,7 @@ class MyTree<T>(value: T) : Collection<T> {
      */
     override fun contains(element: T): Boolean {
         var result: Node<T>? = null
-        root.forEachDepthFirst {
+        root?.forEachDepthFirst {
             if (it.value == element) {
                 result = it
             }
@@ -70,15 +74,13 @@ class MyTree<T>(value: T) : Collection<T> {
         /**
          * Returns `true` if the iteration has more elements.
          */
-        override fun hasNext(): Boolean {
-            return !nodesToVisit.isEmpty()
-        }
+        override fun hasNext(): Boolean = !nodesToVisit.isEmpty()
 
         /**
          * Returns the next element in the iteration.
          */
         override fun next(): T {
-            return this.nextNode().value
+            return nextNode().value
         }
 
         fun nextNode(): Node<T> {
