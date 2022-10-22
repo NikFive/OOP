@@ -117,7 +117,7 @@ var pathtoroot = "../../../../../";
 public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.Node</a>&lt;T extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
 
                     </pre>
-                    <div class="block"></div>
+                    <div class="block"><p>The class that is a node of the tree.</p></div>
                 </li>
             </ul>
         </div>
@@ -260,7 +260,7 @@ public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.N
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyTree.Node.html#getChildren()>getChildren</a>() </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">MutableList of node children</td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
@@ -276,7 +276,7 @@ public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.N
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=MyTree.Node.html#forEachDepthFirst(Function1)>forEachDepthFirst</a>(Function1&lt;<a href=MyTree.Node.html>MyTree.Node</a>&lt;<a href=MyTree.Node.html>T</a>&gt;, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; visit) </code>
                                             </th>
-                                            <td class="colLast"></td>
+                                            <td class="colLast">Traversing the tree in depth.</td>
                                         </tr>
                                         
                                         </tbody>
@@ -317,6 +317,15 @@ public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.N
                                         <pre>MyTree.Node(<a href=MyTree.Node.html>T</a> value)</pre>
                                         <div class="block"></div>
                                         
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>value</code> - the value to be written to the node.</dd>
+                                            
+                                            
+                                        </dl>
+                                        
                                     </li>
                                 </ul>
                                 
@@ -342,7 +351,7 @@ public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.N
                                     <li class="blockList">
                                         <h4>getChildren</h4>
                                         <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=MyTree.Node.html>MyTree.Node</a>&lt;<a href=MyTree.Node.html>T</a>&gt;&gt; <a href=MyTree.Node.html#getChildren()>getChildren</a>()</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>MutableList of node children</p></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
@@ -372,7 +381,16 @@ public final class <span class="typeNameLabel"><a href=MyTree.Node.html>MyTree.N
                                     <li class="blockList">
                                         <h4>forEachDepthFirst</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=MyTree.Node.html#forEachDepthFirst(Function1)>forEachDepthFirst</a>(Function1&lt;<a href=MyTree.Node.html>MyTree.Node</a>&lt;<a href=MyTree.Node.html>T</a>&gt;, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; visit)</pre>
-                                        <div class="block"></div>
+                                        <div class="block"><p>Traversing the tree in depth.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>visit</code> - parameter for DFS iterations.</dd>
+                                            
+                                            
+                                        </dl>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
