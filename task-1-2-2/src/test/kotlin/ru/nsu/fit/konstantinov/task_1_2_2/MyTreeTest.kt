@@ -54,7 +54,7 @@ class MyTreeTest {
         }
         assertEquals(true, tree.contains(1))
         assertEquals(false, tree.contains(-1))
-        assertEquals(true, tree.containsAll(arrayOf(1,2,3).toList()))
+        assertEquals(true, tree.containsAll(arrayOf(1, 2, 3).toList()))
         assertEquals(false, tree.containsAll(arrayOf(-100, 3).toList()))
     }
 
