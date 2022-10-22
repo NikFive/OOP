@@ -28,15 +28,15 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         return newElem
     }
 
-    fun addAll(c: Collection<T>): Boolean {
-        for (elem in c) {
+    fun addAll(collection: Collection<T>): Boolean {
+        for (elem in collection) {
             add(elem)
         }
         return true
     }
 
-    fun addAll(node: Node<T>?, c: Collection<T>): Boolean {
-        for (elem in c) {
+    fun addAll(node: Node<T>?, collection: Collection<T>): Boolean {
+        for (elem in collection) {
             if (node != null) {
                 add(node, elem)
             } else {
@@ -50,11 +50,11 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         return remove(root, value)
     }
 
-    fun remove(node: Node<T>?, o: T): Boolean {
+    fun remove(node: Node<T>?, value: T): Boolean {
         if (node != null) {
             var res = false
             for (i in node.children) {
-                if (i.value == o) {
+                if (i.value == value) {
                     for (j in i.children) {
                         add(node, j.value)
                     }
@@ -69,9 +69,9 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         }
     }
 
-    fun removeAll(c: Collection<T>): Boolean {
+    fun removeAll(tree: Collection<T>): Boolean {
         var deleteFlag = true
-        for (o in c) {
+        for (o in tree) {
             if (!remove(o)) {
                 deleteFlag = false
             }
