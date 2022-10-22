@@ -12,8 +12,10 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         }
     }
 
-    fun add(node: Node<T>, value: T) {
-        node.children.add(Node(value))
+    fun add(node: Node<T>, value: T): Node<T> {
+        val newElem = Node(value)
+        node.children.add(newElem)
+        return newElem
     }
 
     fun add(value: T): Node<T> {
@@ -24,6 +26,39 @@ class MyTree<T>(value: T? = null) : Collection<T> {
             root?.children?.add(newElem)
         }
         return newElem
+    }
+
+    fun addAll(c: Collection<T>): Boolean {
+        for (elem in c) {
+            add(elem)
+        }
+        return true
+    }
+
+    fun addAll(node: Node<T>?, c: Collection<T>): Boolean {
+        for (elem in c) {
+            if (node != null) {
+                add(node, elem)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+
+    fun remove(node: Node<T>, o: T): Boolean {
+        var res = false
+        for (i in node.children) {
+            if (i.value == o) {
+                for (j in i.children) {
+                    add(node, j.value)
+                }
+                node.children.remove(i)
+                res = true
+                break
+            }
+        }
+        return res
     }
 
     /**

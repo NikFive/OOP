@@ -41,7 +41,7 @@ class MyTreeTest {
     @Test
     fun testContains() {
         val tree = MyTree(1)
-        assertEquals(tree.isEmpty(), false)
+        assertEquals(false, tree.isEmpty())
         tree.add(2)
         val nodeB = tree.add(3)
         tree.add(nodeB, 4)
@@ -52,5 +52,23 @@ class MyTreeTest {
         }
         assertEquals(true, tree.contains(1))
         assertEquals(false, tree.contains(-1))
+    }
+
+    @Test
+    fun testRemove() {
+        val tree = MyTree(1)
+        assertEquals(false, tree.isEmpty())
+        tree.add(2)
+        val nodeB = tree.add(3)
+        val nodeA = tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
+        tree.add(nodeA, -1)
+        assertEquals(true, tree.remove(nodeB, 4))
+        var array = emptyArray<Int>()
+        val arrayRes = arrayOf(1, 2, 3, 0, -1)
+        for (i in tree) {
+            array += i
+        }
+        assertContentEquals(array, arrayRes)
     }
 }
