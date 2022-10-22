@@ -64,8 +64,9 @@ class MyTreeTest {
         tree.add(nodeB, 0)
         tree.add(nodeA, -1)
         assertEquals(true, tree.remove(nodeB, 4))
+        assertEquals(true, tree.remove(3))
         var array = emptyArray<Int>()
-        val arrayRes = arrayOf(1, 2, 3, 0, -1)
+        val arrayRes = arrayOf(1, 2, 0, -1)
         for (i in tree) {
             array += i
         }

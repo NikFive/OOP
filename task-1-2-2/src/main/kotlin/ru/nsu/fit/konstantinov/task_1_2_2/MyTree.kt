@@ -46,19 +46,42 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         return true
     }
 
-    fun remove(node: Node<T>, o: T): Boolean {
-        var res = false
-        for (i in node.children) {
-            if (i.value == o) {
-                for (j in i.children) {
-                    add(node, j.value)
+    fun remove(value: T): Boolean {
+        return remove(root, value)
+    }
+
+    fun remove(node: Node<T>?, o: T): Boolean {
+        if (node != null) {
+            var res = false
+            for (i in node.children) {
+                if (i.value == o) {
+                    for (j in i.children) {
+                        add(node, j.value)
+                    }
+                    node.children.remove(i)
+                    res = true
+                    break
                 }
-                node.children.remove(i)
-                res = true
-                break
+            }
+            return res
+        } else {
+            return false
+        }
+    }
+
+    fun removeAll(c: Collection<T>): Boolean {
+        var deleteFlag = true
+        for (o in c) {
+            if (!remove(o)) {
+                deleteFlag = false
             }
         }
-        return res
+        return deleteFlag
+    }
+
+    fun clear() {
+        root?.children?.clear()
+        root = null
     }
 
     /**
