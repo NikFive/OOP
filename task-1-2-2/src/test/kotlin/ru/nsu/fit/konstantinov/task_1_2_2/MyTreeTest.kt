@@ -1,5 +1,6 @@
 package ru.nsu.fit.konstantinov.task_1_2_2
 
+import org.junit.jupiter.api.Assertions.assertThrows
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
@@ -101,5 +102,23 @@ class MyTreeTest {
         }
         assertEquals(8, tree.size)
         assertContentEquals(array, arrayRes)
+    }
+
+    @Test
+    fun testConcurrentModificationException() {
+        val tree = MyTree(1)
+        tree.add(2)
+        tree.add(8)
+        val nodeB = tree.add(3)
+        val nodeA = tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
+        tree.add(nodeA, -1)
+        var array = emptyArray<Int>()
+        assertThrows(ConcurrentModificationException::class.java) {
+            for (i in tree) {
+                array += i
+                tree.add(nodeB, 0)
+            }
+        }
     }
 }

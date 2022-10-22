@@ -7,6 +7,7 @@ package ru.nsu.fit.konstantinov.task_1_2_2
  * @param value can set the value of the tree. The default value is null.
  */
 class MyTree<T>(value: T? = null) : Collection<T> {
+    private var state = 0
     private var root: Node<T>? = null
 
     /**
@@ -25,6 +26,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @return added son
      */
     fun add(node: Node<T>, value: T): Node<T> {
+        state++
         val newElem = Node(value)
         node.children.add(newElem)
         return newElem
@@ -37,6 +39,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @return added son
      */
     fun add(value: T): Node<T> {
+        state++
         val newElem = Node(value)
         if (root == null) {
             root = newElem
@@ -82,7 +85,8 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @param value the value to be deleted.
      * @return returns true if the element deleted successfully.
      */
-    fun remove(value: T) = remove(root, value)
+    fun remove(value: T): Boolean = remove(root, value)
+
 
     /**
      * Removes the son of the *node* with the *value*. The son's children go to the *node*.
@@ -91,6 +95,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @return returns true if the element deleted successfully.
      */
     fun remove(node: Node<T>?, value: T): Boolean {
+        state++
         if (node == null) {
             return false
         }
@@ -132,6 +137,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
     fun clear() {
         root?.children?.clear()
         root = null
+        state++
     }
 
     /**
@@ -152,14 +158,14 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      *
      * @return returns an iterator type object.
      */
-    override fun iterator(): Iterator<T> = DFSIterator(root)
+    override fun iterator(): Iterator<T> = DFSIterator(this)
 
     /**
      * BFS Iterator on the tree.
      *
      * @return returns an iterator type object.
      */
-    fun iteratorBFS(): Iterator<T> = BFSIterator(root)
+    fun iteratorBFS(): Iterator<T> = BFSIterator(this)
 
     /**
      * Checks if all elements in the specified collection are contained in this tree.
@@ -195,17 +201,15 @@ class MyTree<T>(value: T? = null) : Collection<T> {
     /**
      * The class that provides an DFS iterator for traversing the tree
      */
-    private class DFSIterator<T>(root: Node<T>?) : Iterator<T> {
-        /**
-         * Dequeue for iterations.
-         */
+    private class DFSIterator<T>(val tree: MyTree<T>) : Iterator<T> {
         private var nodesToVisit: ArrayDeque<Node<T>> = ArrayDeque()
+        val currentState = tree.state
 
         /**
          * The constructor that add root to the Deque.
          */
         init {
-            root?.let { nodesToVisit.add(it) }
+            tree.root?.let { nodesToVisit.add(it) }
         }
 
         /**
@@ -236,6 +240,9 @@ class MyTree<T>(value: T? = null) : Collection<T> {
          * @return the next node in the dequeue.
          */
         private fun nextNode(): Node<T> {
+            if (currentState != this.tree.state) {
+                throw ConcurrentModificationException("You cannot iterate after changing your tree")
+            }
             check(hasNext())
             val newNode = nodesToVisit.removeFirst()
             addToQueue(newNode)
@@ -246,17 +253,15 @@ class MyTree<T>(value: T? = null) : Collection<T> {
     /**
      * The class that provides an BFS iterator for traversing the tree
      */
-    private class BFSIterator<T>(root: Node<T>?) : Iterator<T> {
-        /**
-         * Dequeue for iterations.
-         */
+    private class BFSIterator<T>(val tree: MyTree<T>) : Iterator<T> {
         private var nodesToVisit: ArrayDeque<Node<T>> = ArrayDeque()
+        val currentState = tree.state
 
         /**
          * The constructor that add root to the Deque.
          */
         init {
-            root?.let { nodesToVisit.add(it) }
+            tree.root?.let { nodesToVisit.add(it) }
         }
 
         /**
@@ -283,6 +288,9 @@ class MyTree<T>(value: T? = null) : Collection<T> {
          * @return the next node in the dequeue.
          */
         private fun nextNode(): Node<T> {
+            if (currentState != this.tree.state) {
+                throw ConcurrentModificationException("You cannot iterate after changing your tree")
+            }
             check(hasNext())
             val newNode = nodesToVisit.removeFirst()
             addToQueue(newNode)
