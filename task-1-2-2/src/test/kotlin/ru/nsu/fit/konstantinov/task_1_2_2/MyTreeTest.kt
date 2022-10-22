@@ -9,16 +9,19 @@ class MyTreeTest {
     fun testAddAddAll() {
         val tree = MyTree(1)
         assertEquals(tree.isEmpty(), false)
+        assertEquals(1, tree.size)
         tree.add(2)
         val nodeB = tree.add(3)
         tree.add(nodeB, 4)
         tree.add(nodeB, 0)
+        assertEquals(5, tree.size)
         tree.addAll(nodeB, arrayOf(6, 7, 8).toList())
         var array = emptyArray<Int>()
         val arrayRes = arrayOf(1, 2, 3, 4, 0, 6, 7, 8)
         for (i in tree) {
             array += i
         }
+        assertEquals(8, tree.size)
         assertContentEquals(array, arrayRes)
     }
 
@@ -26,6 +29,7 @@ class MyTreeTest {
     fun testEmptyTree() {
         val tree = MyTree<Int>()
         assertEquals(tree.isEmpty(), true)
+        assertEquals(0, tree.size)
         val nodeA = tree.add(1)
         tree.add(nodeA, 2)
         val nodeB = tree.add(3)
@@ -79,5 +83,23 @@ class MyTreeTest {
         assertContentEquals(array, arrayRes)
         tree.clear()
         assertEquals(tree.isEmpty(), true)
+    }
+
+    @Test
+    fun testDfsIterator() {
+        val tree = MyTree(1)
+        tree.add(2)
+        val nodeB = tree.add(3)
+        tree.add(nodeB, 4)
+        tree.add(nodeB, 0)
+        tree.addAll(nodeB, arrayOf(6, 7, 8).toList())
+        val iterator: Iterator<Int> = tree.iteratorBFS()
+        var array = emptyArray<Int>()
+        val arrayRes = arrayOf(1, 2, 3, 4, 0, 6, 7, 8)
+        for (i in 0..7) {
+            array += iterator.next()
+        }
+        assertEquals(8, tree.size)
+        assertContentEquals(array, arrayRes)
     }
 }

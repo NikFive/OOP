@@ -14,12 +14,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * Create an empty tree or tree with root with value.
      */
     init {
-        this.root
-        if (value == null) {
-            this.root = null
-        } else {
-            this.root = Node(value)
-        }
+        this.root = value?.let { Node(it) }
     }
 
     /**
@@ -72,12 +67,11 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @return returns true if all the elements of the collection are successfully added.
      */
     fun addAll(node: Node<T>?, collection: Collection<T>): Boolean {
+        if (node == null) {
+            return false
+        }
         for (elem in collection) {
-            if (node != null) {
-                add(node, elem)
-            } else {
-                return false
-            }
+            add(node, elem)
         }
         return true
     }
@@ -88,9 +82,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @param value the value to be deleted.
      * @return returns true if the element deleted successfully.
      */
-    fun remove(value: T): Boolean {
-        return remove(root, value)
-    }
+    fun remove(value: T) = remove(root, value)
 
     /**
      * Removes the son of the *node* with the *value*. The son's children go to the *node*.
@@ -99,22 +91,23 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * @return returns true if the element deleted successfully.
      */
     fun remove(node: Node<T>?, value: T): Boolean {
-        if (node != null) {
-            var res = false
-            for (i in node.children) {
-                if (i.value == value) {
-                    for (j in i.children) {
-                        add(node, j.value)
-                    }
-                    node.children.remove(i)
-                    res = true
-                    break
-                }
-            }
-            return res
-        } else {
+        if (node == null) {
             return false
         }
+        var res = false
+        for (i in node.children) {
+            if (i.value == value) {
+                var array = emptyArray<Node<T>>()
+                for (j in i.children) {
+                    array += j
+                }
+                node.children += array
+                node.children.remove(i)
+                res = true
+                break
+            }
+        }
+        return res
     }
 
     /**
@@ -145,7 +138,7 @@ class MyTree<T>(value: T? = null) : Collection<T> {
      * Returns the size of the collection.
      */
     override val size: Int
-        get() = root?.children?.size ?: 0
+        get() = root?.sizeOfSubTree() ?: 0
 
     /**
      * Returns `true` if the collection is empty (contains no elements), `false` otherwise.
@@ -155,11 +148,18 @@ class MyTree<T>(value: T? = null) : Collection<T> {
     override fun isEmpty(): Boolean = root == null
 
     /**
-     * Iterator on the tree.
+     * DFS Iterator on the tree.
      *
      * @return returns an iterator type object.
      */
     override fun iterator(): Iterator<T> = DFSIterator(root)
+
+    /**
+     * BFS Iterator on the tree.
+     *
+     * @return returns an iterator type object.
+     */
+    fun iteratorBFS(): Iterator<T> = BFSIterator(root)
 
     /**
      * Checks if all elements in the specified collection are contained in this tree.
@@ -199,13 +199,13 @@ class MyTree<T>(value: T? = null) : Collection<T> {
         /**
          * Dequeue for iterations.
          */
-        var nodesToVisit: ArrayDeque<Node<T>> = ArrayDeque()
+        private var nodesToVisit: ArrayDeque<Node<T>> = ArrayDeque()
 
         /**
-         * The constructor that adds all the elements using DFS.
+         * The constructor that add root to the Deque.
          */
         init {
-            root?.forEachDepthFirst { nodesToVisit.add(it) }
+            root?.let { nodesToVisit.add(it) }
         }
 
         /**
@@ -222,14 +222,71 @@ class MyTree<T>(value: T? = null) : Collection<T> {
          */
         override fun next(): T = nextNode().value
 
+        private fun addToQueue(node: Node<T>?) {
+            if (node != null) {
+                for (i in node.children.size - 1 downTo 0) {
+                    nodesToVisit.addFirst(node.children[i])
+                }
+            }
+        }
+
         /**
          * Returns the next node in the dequeue.
          *
          * @return the next node in the dequeue.
          */
-        fun nextNode(): Node<T> {
+        private fun nextNode(): Node<T> {
             check(hasNext())
-            return nodesToVisit.removeFirst()
+            val newNode = nodesToVisit.removeFirst()
+            addToQueue(newNode)
+            return newNode
+        }
+    }
+
+    /**
+     * The class that provides an BFS iterator for traversing the tree
+     */
+    private class BFSIterator<T>(root: Node<T>?) : Iterator<T> {
+        /**
+         * Dequeue for iterations.
+         */
+        private var nodesToVisit: ArrayDeque<Node<T>> = ArrayDeque()
+
+        /**
+         * The constructor that add root to the Deque.
+         */
+        init {
+            root?.let { nodesToVisit.add(it) }
+        }
+
+        /**
+         * Returns `true` if the iteration has more elements.
+         *
+         * @return `true` if the iteration has more elements.
+         */
+        override fun hasNext(): Boolean = !nodesToVisit.isEmpty()
+
+        /**
+         * Returns the next element in the iteration.
+         *
+         * @return the next element in the iteration.
+         */
+        override fun next(): T = nextNode().value
+
+        private fun addToQueue(node: Node<T>?) {
+            node?.let { nodesToVisit.addAll(node.children) }
+        }
+
+        /**
+         * Returns the next node in the dequeue.
+         *
+         * @return the next node in the dequeue.
+         */
+        private fun nextNode(): Node<T> {
+            check(hasNext())
+            val newNode = nodesToVisit.removeFirst()
+            addToQueue(newNode)
+            return newNode
         }
     }
 
@@ -255,6 +312,17 @@ class MyTree<T>(value: T? = null) : Collection<T> {
             children.forEach {
                 it.forEachDepthFirst(visit)
             }
+        }
+
+        /**
+         * Returns the size of the subtree with the *node* root
+         *
+         * @return the size of the subtree with the *node* root
+         */
+        fun sizeOfSubTree(): Int {
+            var res = 0
+            forEachDepthFirst { res += 1 }
+            return res
         }
     }
 }
