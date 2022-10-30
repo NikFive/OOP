@@ -1,16 +1,16 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
 class IncMatrix<V, E> : Graph<V, E> {
-    override var vertexes: MutableSet<Vertex<V>?>? = HashSet()
-    override var edges: MutableSet<Edge<V, E>?>? = HashSet()
+    override var vertexes: MutableSet<Vertex<V>?> = HashSet()
+    override var edges: MutableSet<Edge<V, E>?> = HashSet()
     override val vertexNumber: Int
-        get() = vertexes?.size ?: 0
+        get() = vertexes.size
     override val edgesNumber: Int
-        get() = edges?.size ?: 0
-    private var matrix: HashMap<Vertex<V>, HashMap<Edge<V, E>, Int>>? = HashMap()
+        get() = edges.size
+    private var matrix: HashMap<Vertex<V>, HashMap<Edge<V, E>, Int>> = HashMap()
 
     override fun addVertex(vertex: Vertex<V>?): Boolean {
-        return if (vertexes?.contains(vertex)?.not() == true) {
+        return if (vertexes.contains(vertex).not()) {
             vertex?.let { initVertex(it) }
             true
         } else {
@@ -20,41 +20,41 @@ class IncMatrix<V, E> : Graph<V, E> {
 
     override fun deleteVertex(vertex: Vertex<V>?) {
         val toDelete: ArrayList<Edge<V, E>> = ArrayList()
-        vertexes?.remove(vertex)
-        matrix?.remove(vertex)
-        edges?.forEach { edge ->
+        vertexes.remove(vertex)
+        matrix.remove(vertex)
+        for (edge in edges) {
             edge?.let {
                 if (it.start == vertex || it.end == vertex) {
                     toDelete.add(it)
-                    for (customVertex in vertexes!!) {
-                        matrix?.get(customVertex)?.remove(it)
+                    for (customVertex in vertexes) {
+                        matrix[customVertex]?.remove(it)
                     }
                 }
             }
         }
-        toDelete.forEach { edge -> edges?.remove(edge) }
+        toDelete.forEach { edge -> edges.remove(edge) }
     }
 
     override fun addEdge(edge: Edge<V, E>?) {
         edge?.let {
-            if (vertexes?.contains(it.end)?.not() == true || vertexes?.contains(it.start)?.not() == true) {
-                throw IllegalArgumentException("Vertexes does not in the graph.")
+            if (vertexes.contains(it.end).not() || vertexes.contains(it.start).not()) {
+                throw IllegalArgumentException("Vertex does not in the graph.")
             }
             initEdge(it)
         }
     }
 
     override fun deleteEdge(edge: Edge<V, E>?) {
-        edges?.remove(edge)
-        vertexes?.forEach { vertex ->
-            matrix?.get(vertex)?.remove(edge)
+        edges.remove(edge)
+        for (vertex in vertexes) {
+            matrix[vertex]?.remove(edge)
         }
     }
 
     override fun getAdjVertexes(vertex: Vertex<V>?): MutableSet<Vertex<V>> {
         val vertexSet: MutableSet<Vertex<V>> = HashSet()
-        edges?.forEach { edge ->
-            edge?.let {
+        for (edge in edges) {
+            edge?.also {
                 if (it.start == vertex) {
                     vertexSet.add(it.end)
                 } else if (it.end == vertex) {
@@ -70,27 +70,25 @@ class IncMatrix<V, E> : Graph<V, E> {
     override fun getVertexDegree(vertex: Vertex<V>?): Int = getAdjVertexes(vertex).size
 
     override fun setVertexElement(vertex: Vertex<V>?, newElem: V) {
-        vertex?.let {
-            it.elem = newElem
-        }
+        vertex?.let { it.elem = newElem }
     }
 
     private fun initEdge(edge: Edge<V, E>) {
-        edges?.add(edge)
-        vertexes?.forEach { vertex ->
+        edges.add(edge)
+        for (vertex in vertexes) {
             if (edge.start == vertex || edge.end == vertex) {
-                matrix?.get(vertex)?.set(edge, 1)
+                matrix[vertex]?.put(edge, 1)
             } else {
-                matrix?.get(vertex)?.set(edge, 0)
+                matrix[vertex]?.put(edge, 0)
             }
         }
     }
 
     private fun initVertex(vertex: Vertex<V>) {
-        vertexes?.add(vertex)
-        matrix?.set(vertex, HashMap())
-        edges?.forEach { edge ->
-            edge?.let { matrix?.get(vertex)?.put(it, 0) }
+        vertexes.add(vertex)
+        matrix[vertex] = HashMap()
+        for (edge in edges) {
+            edge?.let { matrix[vertex]?.put(it, 0) }
         }
     }
 }
