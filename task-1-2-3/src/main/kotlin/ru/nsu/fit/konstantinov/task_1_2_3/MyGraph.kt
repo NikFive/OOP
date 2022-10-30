@@ -1,9 +1,9 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
 interface Graph<V, E> {
-    val vertexes: MutableSet<Vertex<V>?>?
+    val vertexes: MutableSet<Vertex<V>?>
     val edgesNumber: Int
-    val edges: MutableSet<Edge<V, E>?>?
+    val edges: MutableSet<Edge<V, E>?>
     val vertexNumber: Int
     fun addVertex(vertex: Vertex<V>?): Boolean
     fun deleteVertex(vertex: Vertex<V>?)
