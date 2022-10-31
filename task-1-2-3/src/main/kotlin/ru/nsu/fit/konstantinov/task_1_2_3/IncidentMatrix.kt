@@ -1,6 +1,6 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
-class IncMatrix<V, E> : Graph<V, E> {
+class IncidentMatrix<V, E> : Graph<V, E> {
     override var vertices: MutableSet<Vertex<V>?> = HashSet()
 
     override var edges: MutableSet<Edge<V, E>?> = HashSet()
@@ -40,7 +40,7 @@ class IncMatrix<V, E> : Graph<V, E> {
     override fun addEdge(edge: Edge<V, E>?) {
         edge?.let {
             if (vertices.contains(it.end).not() || vertices.contains(it.start).not()) {
-                throw IllegalArgumentException("Vertex does not in the graph.")
+                throw IllegalArgumentException("Vertices does not in the graph.")
             }
             initEdge(it)
         }
@@ -93,4 +93,8 @@ class IncMatrix<V, E> : Graph<V, E> {
             edge?.let { matrix[vertex]?.put(it, 0) }
         }
     }
+
+    override fun containsVertex(vertex: Vertex<V>?): Boolean = vertices.contains(vertex)
+
+    override fun containsEdge(edge: Edge<V, E>?): Boolean = edges.contains(edge)
 }

@@ -1,6 +1,6 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
-class AdjMatrix<V, E> : Graph<V, E> {
+class AdjacencyMatrix<V, E> : Graph<V, E> {
     override val vertices: MutableSet<Vertex<V>?> = HashSet()
     override val edgesNumber: Int
         get() = edges.size
@@ -36,7 +36,7 @@ class AdjMatrix<V, E> : Graph<V, E> {
     override fun deleteEdge(edge: Edge<V, E>?) {
         edge?.let {
             if (vertices.contains(it.end).not() || vertices.contains(it.start).not()) {
-                throw IllegalArgumentException("Vertexes does not in the graph.")
+                throw IllegalArgumentException("Vertices does not in the graph.")
             }
             edges.remove(it)
             matrix[it.start]?.put(it.end, 0)
@@ -47,7 +47,7 @@ class AdjMatrix<V, E> : Graph<V, E> {
     override fun addEdge(edge: Edge<V, E>?) {
         edge?.let {
             if (vertices.contains(it.end).not() || vertices.contains(it.start).not()) {
-                throw IllegalArgumentException("Vertexes does not in the graph.")
+                throw IllegalArgumentException("Vertices does not in the graph.")
             }
             if (!edges.contains(it)) {
                 edges.add(it)
@@ -87,4 +87,10 @@ class AdjMatrix<V, E> : Graph<V, E> {
             newVertex?.let { matrix[vertex]?.put(it, 0) }
         }
     }
+
+    override fun containsVertex(vertex: Vertex<V>?): Boolean = vertices.contains(vertex)
+
+    override fun containsEdge(edge: Edge<V, E>?): Boolean = edges.contains(edge)
+
 }
+

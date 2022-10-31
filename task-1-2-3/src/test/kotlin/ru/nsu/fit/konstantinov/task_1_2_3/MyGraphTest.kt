@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 
 class MyGraphTest {
-    private var matrixForTest: IncMatrix<String, String>? = IncMatrix()
+    private var matrixForTest: IncidentMatrix<String, String>? = IncidentMatrix()
 
     @Test
     fun testIncMatrix() {
@@ -43,10 +43,14 @@ class MyGraphTest {
         matrixForTest?.deleteEdge(fourthEdge)
         assertEquals(4, matrixForTest?.verticesNumber)
         assertEquals(1, matrixForTest?.edgesNumber)
+        assertEquals(true, matrixForTest?.containsEdge(thirdEdge))
+        assertEquals(false, matrixForTest?.containsEdge(fourthEdge))
+        assertEquals(true, matrixForTest?.containsVertex(thirdVertex))
+        assertEquals(false, matrixForTest?.containsVertex(firstVertex))
         assertEquals(mutableSetOf(thirdVertex), (matrixForTest?.getAdjacentVertices(fourthVertex)))
     }
 
-    private var matrixForTest2: AdjMatrix<String, String>? = AdjMatrix()
+    private var matrixForTest2: AdjacencyMatrix<String, String>? = AdjacencyMatrix()
 
     @Test
     fun testAdjMatrix() {
@@ -84,10 +88,14 @@ class MyGraphTest {
         matrixForTest2?.deleteEdge(fourthEdge)
         assertEquals(4, matrixForTest2?.verticesNumber)
         assertEquals(1, matrixForTest2?.edgesNumber)
+        assertEquals(true, matrixForTest2?.containsEdge(thirdEdge))
+        assertEquals(false, matrixForTest2?.containsEdge(fourthEdge))
+        assertEquals(true, matrixForTest2?.containsVertex(thirdVertex))
+        assertEquals(false, matrixForTest2?.containsVertex(firstVertex))
         assertEquals(mutableSetOf(thirdVertex), (matrixForTest2?.getAdjacentVertices(fourthVertex)))
     }
 
-    private var matrixForTest3: AdjList<String, String>? = AdjList()
+    private var matrixForTest3: AdjacencyList<String, String>? = AdjacencyList()
 
     @Test
     fun testAdjList() {
@@ -125,6 +133,46 @@ class MyGraphTest {
         matrixForTest3?.deleteEdge(fourthEdge)
         assertEquals(4, matrixForTest3?.verticesNumber)
         assertEquals(1, matrixForTest3?.edgesNumber)
+        assertEquals(true, matrixForTest3?.containsEdge(thirdEdge))
+        assertEquals(false, matrixForTest3?.containsEdge(fourthEdge))
+        assertEquals(true, matrixForTest3?.containsVertex(thirdVertex))
+        assertEquals(false, matrixForTest3?.containsVertex(firstVertex))
         assertEquals(mutableSetOf(thirdVertex), (matrixForTest3?.getAdjacentVertices(fourthVertex)))
+    }
+
+    private var matrixForDijkstra: AdjacencyList<String, String>? = AdjacencyList()
+
+    @Test
+    fun testDijkstra() {
+        val firstVertex = Vertex("A")
+        val secondVertex = Vertex("B")
+        val thirdVertex = Vertex("C")
+        val fourthVertex = Vertex("D")
+        val fifthVertex = Vertex("E")
+        val firstEdge = Edge("AB", 100, firstVertex, secondVertex)
+        val secondEdge = Edge("BC", 10, secondVertex, thirdVertex)
+        val thirdEdge = Edge("CD", 8, thirdVertex, fourthVertex)
+        val fourthEdge = Edge("ED", 4, fifthVertex, fourthVertex)
+        val fifthEdge = Edge("AE", 5, firstVertex, fifthVertex)
+        matrixForDijkstra?.addVertex(firstVertex)
+        matrixForDijkstra?.addVertex(secondVertex)
+        matrixForDijkstra?.addVertex(thirdVertex)
+        matrixForDijkstra?.addVertex(fourthVertex)
+        matrixForDijkstra?.addVertex(fifthVertex)
+        matrixForDijkstra?.addEdge(firstEdge)
+        matrixForDijkstra?.addEdge(secondEdge)
+        matrixForDijkstra?.addEdge(thirdEdge)
+        matrixForDijkstra?.addEdge(fourthEdge)
+        matrixForDijkstra?.addEdge(fifthEdge)
+        assertEquals(
+            matrixForDijkstra?.dijkstraAlgorithm(firstVertex),
+            hashMapOf(
+                Pair(firstVertex, 0),
+                Pair(secondVertex, 100),
+                Pair(thirdVertex, 110),
+                Pair(fourthVertex, 9),
+                Pair(fifthVertex, 5)
+            )
+        )
     }
 }

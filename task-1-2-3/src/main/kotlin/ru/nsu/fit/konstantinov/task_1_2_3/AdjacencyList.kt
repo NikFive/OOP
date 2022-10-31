@@ -1,6 +1,6 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
-class AdjList<V, E> : Graph<V, E> {
+class AdjacencyList<V, E> : Graph<V, E> {
     override val vertices: MutableSet<Vertex<V>?> = HashSet()
     override val verticesNumber: Int
         get() = vertices.size
@@ -33,7 +33,7 @@ class AdjList<V, E> : Graph<V, E> {
     override fun addEdge(edge: Edge<V, E>?) {
         edge?.let {
             if (vertices.contains(it.end).not() || vertices.contains(it.start).not()) {
-                throw IllegalArgumentException("Vertexes does not in the graph.")
+                throw IllegalArgumentException("Vertices does not in the graph.")
             }
             edges.add(edge)
             listRows[it.start]?.add(it.end)
@@ -59,4 +59,8 @@ class AdjList<V, E> : Graph<V, E> {
             false
         }
     }
+
+    override fun containsVertex(vertex: Vertex<V>?): Boolean = vertices.contains(vertex)
+
+    override fun containsEdge(edge: Edge<V, E>?): Boolean = edges.contains(edge)
 }
