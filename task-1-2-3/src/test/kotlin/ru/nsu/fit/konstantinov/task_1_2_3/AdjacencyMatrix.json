@@ -1,0 +1,140 @@
+[
+  {
+    "elem": "A",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 5
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 12
+      },
+      {
+        "weight": 25
+      },
+      {
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "elem": "B",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 8
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "elem": "C",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 2
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "elem": "D",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "elem": "F",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "elem": "G",
+    "vertices": [
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 0
+      },
+      {
+        "weight": 5
+      },
+      {
+        "weight": 0
+      }
+    ]
+  }
+]

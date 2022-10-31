@@ -165,8 +165,7 @@ class MyGraphTest {
         matrixForDijkstra?.addEdge(fourthEdge)
         matrixForDijkstra?.addEdge(fifthEdge)
         assertEquals(
-            matrixForDijkstra?.dijkstraAlgorithm(firstVertex),
-            hashMapOf(
+            matrixForDijkstra?.dijkstraAlgorithm(firstVertex), hashMapOf(
                 Pair(firstVertex, 0),
                 Pair(secondVertex, 100),
                 Pair(thirdVertex, 110),
@@ -177,8 +176,17 @@ class MyGraphTest {
     }
 
     @Test
-    fun testParse() {
-        val testParse = ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/test.json").parseAdjacencyList()
+    fun testParseAdjacencyList() {
+        val testParse =
+            ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/AdjacencyList.json").parseAdjacencyList()
+        assertEquals(6, testParse.edgesNumber)
+        assertEquals(6, testParse.verticesNumber)
+    }
+
+    @Test
+    fun testParseAdjacencyMatrix() {
+        val testParse =
+            ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/AdjacencyMatrix.json").parseAdjacencyMatrix()
         assertEquals(6, testParse.edgesNumber)
         assertEquals(6, testParse.verticesNumber)
     }

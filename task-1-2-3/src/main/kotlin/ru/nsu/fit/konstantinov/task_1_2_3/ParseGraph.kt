@@ -33,4 +33,42 @@ class ParseGraph(text: String) {
 
     @Serializable
     data class NeighborsList(val end: String, val weight: Int)
+
+
+    fun parseAdjacencyMatrix(): AdjacencyMatrix<String, String> {
+        val result: AdjacencyMatrix<String, String> = AdjacencyMatrix()
+        val vertices: MutableList<Vertex<String>> = ArrayList()
+        for (i in obj) {
+            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
+            val vertex = Vertex(obj3.elem)
+            vertices.add(vertex)
+            result.addVertex(vertex)
+        }
+        var countI = 0
+        for (i in obj) {
+            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
+            var countJ = 0
+            for (j in obj3.vertices) {
+                if (j.weight != 0) {
+                    result.addEdge(
+                        Edge(
+                            obj3.elem + vertices[countJ].elem,
+                            j.weight,
+                            vertices[countI],
+                            vertices[countJ]
+                        )
+                    )
+                }
+                countJ++
+            }
+            countI++
+        }
+        return result
+    }
+
+    @Serializable
+    data class JSONAdjacencyMatrix(val elem: String, val vertices: ArrayList<VerticesList>)
+
+    @Serializable
+    data class VerticesList(val weight: Int)
 }
