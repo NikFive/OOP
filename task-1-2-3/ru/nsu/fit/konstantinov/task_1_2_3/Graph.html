@@ -302,6 +302,30 @@ public interface <span class="typeNameLabel"><a href=Graph.html>Graph</a>&lt;V e
                                         </tr>
                                         
                                         <tr id="i8" class="altColor">
+                                            <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Graph.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=Graph.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=Graph.html>V</a>, <a href=Graph.html>E</a>&gt; edge) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html>HashMap</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt;, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#dijkstraAlgorithm(Vertex)>dijkstraAlgorithm</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt; startVertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Graph.html#getVertices()>getVertices</a>() </code>
@@ -309,7 +333,7 @@ public interface <span class="typeNameLabel"><a href=Graph.html>Graph</a>&lt;V e
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i9" class="rowColor">
+                                        <tr id="i12" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Graph.html#getEdgesNumber()>getEdgesNumber</a>() </code>
@@ -317,7 +341,7 @@ public interface <span class="typeNameLabel"><a href=Graph.html>Graph</a>&lt;V e
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i10" class="altColor">
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=Graph.html>V</a>, <a href=Graph.html>E</a>&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Graph.html#getEdges()>getEdges</a>() </code>
@@ -325,7 +349,7 @@ public interface <span class="typeNameLabel"><a href=Graph.html>Graph</a>&lt;V e
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i11" class="rowColor">
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=Graph.html#getVerticesNumber()>getVerticesNumber</a>() </code>
@@ -491,6 +515,51 @@ public interface <span class="typeNameLabel"><a href=Graph.html>Graph</a>&lt;V e
                                     <li class="blockList">
                                         <h4>getVertexDegree</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=Graph.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsVertex(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>containsVertex</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=Graph.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsEdge(Edge)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>containsEdge</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=Graph.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=Graph.html>V</a>, <a href=Graph.html>E</a>&gt; edge)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="dijkstraAlgorithm(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>dijkstraAlgorithm</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html>HashMap</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt;, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt; <a href=IncidentMatrix.html#dijkstraAlgorithm(Vertex)>dijkstraAlgorithm</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=Graph.html>V</a>&gt; startVertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

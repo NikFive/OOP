@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>AdjList 1.0-SNAPSHOT API </title>
+    <title>AdjacencyList 1.0-SNAPSHOT API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class AdjList" class="title">Class AdjList</h2>
+        <h2 title="Class AdjacencyList" class="title">Class AdjacencyList</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -117,8 +117,8 @@ var pathtoroot = "../../../../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&lt;V extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>, E extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
- implements <a href=Graph.html>Graph</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt;
+public final class <span class="typeNameLabel"><a href=AdjacencyList.html>AdjacencyList</a>&lt;V extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>, E extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
+ implements <a href=Graph.html>Graph</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt;
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -168,26 +168,26 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt;&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#vertices>vertices</a></code></th>
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#vertices>vertices</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#verticesNumber>verticesNumber</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#verticesNumber>verticesNumber</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt;&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#edges>edges</a></code></th>
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#edges>edges</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#edgesNumber>edgesNumber</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#edgesNumber>edgesNumber</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -217,7 +217,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#AdjList()">AdjList</a></span>()</code></th>
+                                                        href="#AdjacencyList()">AdjacencyList</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -271,9 +271,9 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getVertices()>getVertices</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getVertices()>getVertices</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -281,15 +281,15 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getVerticesNumber()>getVerticesNumber</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getVerticesNumber()>getVerticesNumber</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getEdges()>getEdges</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getEdges()>getEdges</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -297,7 +297,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getEdgesNumber()>getEdgesNumber</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getEdgesNumber()>getEdgesNumber</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -305,7 +305,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i4" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -313,23 +313,23 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex, <a href=AdjList.html>V</a> newElem) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex, <a href=AdjacencyList.html>V</a> newElem) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code><a href=AdjList.html>V</a></code>
+                                            <td class="colFirst"><code><a href=AdjacencyList.html>V</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -337,7 +337,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt; edge) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -345,7 +345,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt; edge) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -353,7 +353,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -361,7 +361,23 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                         <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjList.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=AdjacencyList.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -371,6 +387,12 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.ru.nsu.fit.konstantinov.task_1_2_3.Graph">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;ru.nsu.fit.konstantinov.task_1_2_3.Graph</h3>
+                                            <code>dijkstraAlgorithm</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -397,11 +419,11 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="AdjList()"></a>
+                                <a name="AdjacencyList()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>AdjList</h4>
-                                        <pre>AdjList()</pre>
+                                        <h4>AdjacencyList</h4>
+                                        <pre>AdjacencyList()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -428,7 +450,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getVertices</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt;&gt; <a href=AdjList.html#getVertices()>getVertices</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt;&gt; <a href=AdjacencyList.html#getVertices()>getVertices</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -443,7 +465,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getVerticesNumber</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjList.html#getVerticesNumber()>getVerticesNumber</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjacencyList.html#getVerticesNumber()>getVerticesNumber</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -458,7 +480,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getEdges</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt;&gt; <a href=AdjList.html#getEdges()>getEdges</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt;&gt; <a href=AdjacencyList.html#getEdges()>getEdges</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -473,7 +495,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getEdgesNumber</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjList.html#getEdgesNumber()>getEdgesNumber</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjacencyList.html#getEdgesNumber()>getEdgesNumber</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -488,7 +510,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getVertexDegree</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjList.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjacencyList.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -503,7 +525,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>setVertexElement</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjList.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex, <a href=AdjList.html>V</a> newElem)</pre>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjacencyList.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex, <a href=AdjacencyList.html>V</a> newElem)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -518,7 +540,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getVertexElement</h4>
-                                        <pre class="methodSignature"> <a href=AdjList.html>V</a> <a href=AdjList.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=AdjacencyList.html>V</a> <a href=AdjacencyList.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -533,7 +555,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>getAdjacentVertices</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt;&gt; <a href=AdjList.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt;&gt; <a href=AdjacencyList.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -548,7 +570,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>deleteEdge</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjList.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt; edge)</pre>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjacencyList.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -563,7 +585,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>addEdge</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjList.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjList.html>V</a>, <a href=AdjList.html>E</a>&gt; edge)</pre>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjacencyList.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -578,7 +600,7 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                           >
                                     <li class="blockList">
                                         <h4>deleteVertex</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjList.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjacencyList.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -589,11 +611,41 @@ public final class <span class="typeNameLabel"><a href=AdjList.html>AdjList</a>&
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>addVertex</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=AdjList.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjList.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=AdjacencyList.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsVertex(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>containsVertex</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=AdjacencyList.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjacencyList.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsEdge(Edge)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>containsEdge</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=AdjacencyList.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjacencyList.html>V</a>, <a href=AdjacencyList.html>E</a>&gt; edge)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

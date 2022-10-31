@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>AdjMatrix 1.0-SNAPSHOT API </title>
+    <title>IncidentMatrix 1.0-SNAPSHOT API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class AdjMatrix" class="title">Class AdjMatrix</h2>
+        <h2 title="Class IncidentMatrix" class="title">Class IncidentMatrix</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -117,8 +117,8 @@ var pathtoroot = "../../../../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix</a>&lt;V extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>, E extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
- implements <a href=Graph.html>Graph</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt;
+public final class <span class="typeNameLabel"><a href=IncidentMatrix.html>IncidentMatrix</a>&lt;V extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>, E extends <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a>&gt;</span>
+ implements <a href=Graph.html>Graph</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -168,26 +168,26 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt;&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#vertices>vertices</a></code></th>
+                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#vertices>vertices</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#edgesNumber>edgesNumber</a></code></th>
+                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#edges>edges</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt;&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#edges>edges</a></code></th>
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#verticesNumber>verticesNumber</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#verticesNumber>verticesNumber</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#edgesNumber>edgesNumber</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -217,7 +217,7 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#AdjMatrix()">AdjMatrix</a></span>()</code></th>
+                                                        href="#IncidentMatrix()">IncidentMatrix</a></span>()</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -271,33 +271,33 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getVertices()>getVertices</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getVertices()>getVertices</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getEdgesNumber()>getEdgesNumber</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#setVertices(Set)>setVertices</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt; vertices) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getEdges()>getEdges</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getEdges()>getEdges</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getVerticesNumber()>getVerticesNumber</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#setEdges(Set)>setEdges</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;&gt; edges) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -305,31 +305,31 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         <tr id="i4" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getVerticesNumber()>getVerticesNumber</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex, <a href=AdjMatrix.html>V</a> newElem) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getEdgesNumber()>getEdgesNumber</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code><a href=AdjMatrix.html>V</a></code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt;&gt;</code>
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -337,7 +337,7 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt; edge) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -345,23 +345,55 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt; edge) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i10" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code><a href=IncidentMatrix.html>V</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex, <a href=IncidentMatrix.html>V</a> newElem) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=AdjMatrix.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex) </code>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i15" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=IncidentMatrix.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -371,6 +403,12 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.ru.nsu.fit.konstantinov.task_1_2_3.Graph">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;ru.nsu.fit.konstantinov.task_1_2_3.Graph</h3>
+                                            <code>dijkstraAlgorithm</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -397,11 +435,11 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="AdjMatrix()"></a>
+                                <a name="IncidentMatrix()"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>AdjMatrix</h4>
-                                        <pre>AdjMatrix()</pre>
+                                        <h4>IncidentMatrix</h4>
+                                        <pre>IncidentMatrix()</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -428,22 +466,22 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                           >
                                     <li class="blockList">
                                         <h4>getVertices</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt;&gt; <a href=AdjMatrix.html#getVertices()>getVertices</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt; <a href=IncidentMatrix.html#getVertices()>getVertices</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="getEdgesNumber()">
+                                <a id="setVertices(Set)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getEdgesNumber</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjMatrix.html#getEdgesNumber()>getEdgesNumber</a>()</pre>
+                                        <h4>setVertices</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#setVertices(Set)>setVertices</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt; vertices)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -458,7 +496,22 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                           >
                                     <li class="blockList">
                                         <h4>getEdges</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt;&gt; <a href=AdjMatrix.html#getEdges()>getEdges</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;&gt; <a href=IncidentMatrix.html#getEdges()>getEdges</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setEdges(Set)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setEdges</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#setEdges(Set)>setEdges</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt;&gt; edges)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -473,97 +526,37 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                           >
                                     <li class="blockList">
                                         <h4>getVerticesNumber</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjMatrix.html#getVerticesNumber()>getVerticesNumber</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=IncidentMatrix.html#getVerticesNumber()>getVerticesNumber</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="getVertexDegree(Vertex)">
+                                <a id="getEdgesNumber()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getVertexDegree</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=AdjMatrix.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex)</pre>
+                                        <h4>getEdgesNumber</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=IncidentMatrix.html#getEdgesNumber()>getEdgesNumber</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="setVertexElement(Vertex,V)">
+                                <a id="addVertex(Vertex)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>setVertexElement</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjMatrix.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex, <a href=AdjMatrix.html>V</a> newElem)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="getVertexElement(Vertex)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getVertexElement</h4>
-                                        <pre class="methodSignature"> <a href=AdjMatrix.html>V</a> <a href=AdjMatrix.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="getAdjacentVertices(Vertex)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getAdjacentVertices</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt;&gt; <a href=AdjMatrix.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="deleteEdge(Edge)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>deleteEdge</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjMatrix.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt; edge)</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="addEdge(Edge)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>addEdge</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjMatrix.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=AdjMatrix.html>V</a>, <a href=AdjMatrix.html>E</a>&gt; edge)</pre>
+                                        <h4>addVertex</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=IncidentMatrix.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -578,22 +571,127 @@ public final class <span class="typeNameLabel"><a href=AdjMatrix.html>AdjMatrix<
                                           >
                                     <li class="blockList">
                                         <h4>deleteVertex</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=AdjMatrix.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex)</pre>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#deleteVertex(Vertex)>deleteVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="addVertex(Vertex)">
+                                <a id="addEdge(Edge)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>addEdge</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#addEdge(Edge)>addEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="deleteEdge(Edge)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>deleteEdge</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#deleteEdge(Edge)>deleteEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getAdjacentVertices(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getAdjacentVertices</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt;&gt; <a href=IncidentMatrix.html#getAdjacentVertices(Vertex)>getAdjacentVertices</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getVertexElement(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getVertexElement</h4>
+                                        <pre class="methodSignature"> <a href=IncidentMatrix.html>V</a> <a href=IncidentMatrix.html#getVertexElement(Vertex)>getVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getVertexDegree(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getVertexDegree</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=IncidentMatrix.html#getVertexDegree(Vertex)>getVertexDegree</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVertexElement(Vertex,V)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVertexElement</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=IncidentMatrix.html#setVertexElement(Vertex,V)>setVertexElement</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex, <a href=IncidentMatrix.html>V</a> newElem)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsVertex(Vertex)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>containsVertex</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=IncidentMatrix.html#containsVertex(Vertex)>containsVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=IncidentMatrix.html>V</a>&gt; vertex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="containsEdge(Edge)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>addVertex</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=AdjMatrix.html#addVertex(Vertex)>addVertex</a>(<a href=Vertex.html>Vertex</a>&lt;<a href=AdjMatrix.html>V</a>&gt; vertex)</pre>
+                                        <h4>containsEdge</h4>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=IncidentMatrix.html#containsEdge(Edge)>containsEdge</a>(<a href=Edge.html>Edge</a>&lt;<a href=IncidentMatrix.html>V</a>, <a href=IncidentMatrix.html>E</a>&gt; edge)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
