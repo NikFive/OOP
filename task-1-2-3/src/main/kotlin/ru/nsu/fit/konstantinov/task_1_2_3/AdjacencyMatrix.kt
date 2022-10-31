@@ -93,4 +93,3 @@ class AdjacencyMatrix<V, E> : Graph<V, E> {
     override fun containsEdge(edge: Edge<V, E>?): Boolean = edges.contains(edge)
 
 }
-

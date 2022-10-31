@@ -175,4 +175,11 @@ class MyGraphTest {
             )
         )
     }
+
+    @Test
+    fun testParse() {
+        val testParse = ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/test.json").parseAdjacencyList()
+        assertEquals(6, testParse.edgesNumber)
+        assertEquals(6, testParse.verticesNumber)
+    }
 }
