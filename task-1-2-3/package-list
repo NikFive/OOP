@@ -1,5 +1,6 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.JSONAdjacencyList///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.JSONAdjacencyList.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.NeighborsList///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.NeighborsList.html
 ru.nsu.fit.konstantinov.task_1_2_3
 
