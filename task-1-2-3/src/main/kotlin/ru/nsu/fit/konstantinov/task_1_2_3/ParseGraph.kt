@@ -10,19 +10,19 @@ import java.io.File
 class ParseGraph(text: String) {
     private val bufferedReader: BufferedReader = File(text).bufferedReader()
     private val inputString = bufferedReader.use { it.readText() }
-    private val obj = Json.parseToJsonElement(inputString).jsonArray
+    private val jsonData = Json.parseToJsonElement(inputString).jsonArray
     fun parseAdjacencyList(): AdjacencyList<String, String> {
         val result: AdjacencyList<String, String> = AdjacencyList()
         val vertices: HashMap<String, Vertex<String>> = HashMap()
-        for (i in obj) {
-            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyList>(i)
-            vertices[obj3.elem] = Vertex(obj3.elem)
-            result.addVertex(vertices[obj3.elem])
+        for (i in jsonData) {
+            val jsonElem = Json.decodeFromJsonElement<JSONAdjacencyList>(i)
+            vertices[jsonElem.elem] = Vertex(jsonElem.elem)
+            result.addVertex(vertices[jsonElem.elem])
         }
-        for (i in obj) {
-            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyList>(i)
-            for (j in obj3.neighbors) {
-                result.addEdge(Edge(obj3.elem + j.end, j.weight, vertices[obj3.elem]!!, vertices[j.end]!!))
+        for (i in jsonData) {
+            val jsonElem = Json.decodeFromJsonElement<JSONAdjacencyList>(i)
+            for (j in jsonElem.neighbors) {
+                result.addEdge(Edge(jsonElem.elem + j.end, j.weight, vertices[jsonElem.elem]!!, vertices[j.end]!!))
             }
         }
         return result
@@ -38,24 +38,21 @@ class ParseGraph(text: String) {
     fun parseAdjacencyMatrix(): AdjacencyMatrix<String, String> {
         val result: AdjacencyMatrix<String, String> = AdjacencyMatrix()
         val vertices: MutableList<Vertex<String>> = ArrayList()
-        for (i in obj) {
-            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
-            val vertex = Vertex(obj3.elem)
+        for (i in jsonData) {
+            val jsonElem = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
+            val vertex = Vertex(jsonElem.elem)
             vertices.add(vertex)
             result.addVertex(vertex)
         }
         var countI = 0
-        for (i in obj) {
-            val obj3 = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
+        for (i in jsonData) {
+            val jsonElem = Json.decodeFromJsonElement<JSONAdjacencyMatrix>(i)
             var countJ = 0
-            for (j in obj3.vertices) {
+            for (j in jsonElem.vertices) {
                 if (j.weight != 0) {
                     result.addEdge(
                         Edge(
-                            obj3.elem + vertices[countJ].elem,
-                            j.weight,
-                            vertices[countI],
-                            vertices[countJ]
+                            jsonElem.elem + vertices[countJ].elem, j.weight, vertices[countI], vertices[countJ]
                         )
                     )
                 }

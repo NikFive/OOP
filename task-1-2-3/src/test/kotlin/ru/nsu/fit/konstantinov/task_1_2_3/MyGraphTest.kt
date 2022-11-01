@@ -1,5 +1,7 @@
 package ru.nsu.fit.konstantinov.task_1_2_3
 
+import org.junit.jupiter.api.Assertions
+import java.io.FileNotFoundException
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -27,6 +29,9 @@ class MyGraphTest {
         matrixForTest?.addEdge(secondEdge)
         matrixForTest?.addEdge(thirdEdge)
         matrixForTest?.addEdge(fourthEdge)
+        Assertions.assertThrows(IllegalArgumentException::class.java) {
+            matrixForTest?.addEdge(Edge("4", 31, Vertex("lol"), Vertex("kek")))
+        }
         assertEquals(4, matrixForTest?.edgesNumber)
         assertEquals(5, matrixForTest?.verticesNumber)
         assertEquals("1", matrixForTest?.getVertexElement(firstVertex))
@@ -72,6 +77,9 @@ class MyGraphTest {
         matrixForTest2?.addEdge(secondEdge)
         matrixForTest2?.addEdge(thirdEdge)
         matrixForTest2?.addEdge(fourthEdge)
+        Assertions.assertThrows(IllegalArgumentException::class.java) {
+            matrixForTest2?.addEdge(Edge("4", 31, Vertex("lol"), Vertex("kek")))
+        }
         assertEquals(4, matrixForTest2?.edgesNumber)
         assertEquals(5, matrixForTest2?.verticesNumber)
         assertEquals("1", matrixForTest2?.getVertexElement(firstVertex))
@@ -117,6 +125,9 @@ class MyGraphTest {
         matrixForTest3?.addEdge(secondEdge)
         matrixForTest3?.addEdge(thirdEdge)
         matrixForTest3?.addEdge(fourthEdge)
+        Assertions.assertThrows(IllegalArgumentException::class.java) {
+            matrixForTest3?.addEdge(Edge("4", 31, Vertex("lol"), Vertex("kek")))
+        }
         assertEquals(4, matrixForTest3?.edgesNumber)
         assertEquals(5, matrixForTest3?.verticesNumber)
         assertEquals("1", matrixForTest3?.getVertexElement(firstVertex))
@@ -179,6 +190,9 @@ class MyGraphTest {
     fun testParseAdjacencyList() {
         val testParse =
             ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/AdjacencyList.json").parseAdjacencyList()
+        Assertions.assertThrows(FileNotFoundException::class.java) {
+            ParseGraph("123.json").parseAdjacencyList()
+        }
         assertEquals(6, testParse.edgesNumber)
         assertEquals(6, testParse.verticesNumber)
     }
@@ -187,6 +201,9 @@ class MyGraphTest {
     fun testParseAdjacencyMatrix() {
         val testParse =
             ParseGraph("src/test/kotlin/ru/nsu/fit/konstantinov/task_1_2_3/AdjacencyMatrix.json").parseAdjacencyMatrix()
+        Assertions.assertThrows(FileNotFoundException::class.java) {
+            ParseGraph("123.json").parseAdjacencyMatrix()
+        }
         assertEquals(6, testParse.edgesNumber)
         assertEquals(6, testParse.verticesNumber)
     }
