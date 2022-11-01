@@ -29,10 +29,10 @@ class ParseGraph(text: String) {
     }
 
     @Serializable
-    data class JSONAdjacencyList(val elem: String, val neighbors: ArrayList<NeighborsList>)
+    private data class JSONAdjacencyList(val elem: String, val neighbors: ArrayList<NeighborsList>)
 
     @Serializable
-    data class NeighborsList(val end: String, val weight: Int)
+    private data class NeighborsList(val end: String, val weight: Int)
 
 
     fun parseAdjacencyMatrix(): AdjacencyMatrix<String, String> {
@@ -64,8 +64,8 @@ class ParseGraph(text: String) {
     }
 
     @Serializable
-    data class JSONAdjacencyMatrix(val elem: String, val vertices: ArrayList<VerticesList>)
+    private data class JSONAdjacencyMatrix(val elem: String, val vertices: ArrayList<VerticesList>)
 
     @Serializable
-    data class VerticesList(val weight: Int)
+    private data class VerticesList(val weight: Int)
 }
