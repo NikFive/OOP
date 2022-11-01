@@ -1,8 +1,5 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.JSONAdjacencyList///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.JSONAdjacencyList.html
-$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.JSONAdjacencyMatrix///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.JSONAdjacencyMatrix.html
-$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.NeighborsList///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.NeighborsList.html
-$dokka.location:ru.nsu.fit.konstantinov.task_1_2_3/ParseGraph.VerticesList///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_2_3/ParseGraph.VerticesList.html
+
 ru.nsu.fit.konstantinov.task_1_2_3
 
