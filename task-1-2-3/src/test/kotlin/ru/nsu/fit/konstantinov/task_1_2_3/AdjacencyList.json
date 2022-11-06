@@ -1,0 +1,54 @@
+[
+  {
+    "elem": "A",
+    "neighbors": [
+      {
+        "end": "B",
+        "weight": 5
+      },
+      {
+        "end": "D",
+        "weight": 12
+      },
+      {
+        "end": "F",
+        "weight": 25
+      }
+    ]
+  },
+  {
+    "elem": "B",
+    "neighbors": [
+      {
+        "end": "D",
+        "weight": 8
+      }
+    ]
+  },
+  {
+    "elem": "C",
+    "neighbors": [
+      {
+        "end": "D",
+        "weight": 2
+      }
+    ]
+  },
+  {
+    "elem": "D",
+    "neighbors": []
+  },
+  {
+    "elem": "F",
+    "neighbors": []
+  },
+  {
+    "elem": "G",
+    "neighbors": [
+      {
+        "end": "F",
+        "weight": 5
+      }
+    ]
+  }
+]
