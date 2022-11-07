@@ -8,7 +8,7 @@ plugins {
     application
 }
 
-group = "ru.nsu.fit.konstantinov.task-1-3-1"
+group = "ru.nsu.fit.konstantinov.task-1-2-3"
 version = "1.0-SNAPSHOT"
 
 repositories {
