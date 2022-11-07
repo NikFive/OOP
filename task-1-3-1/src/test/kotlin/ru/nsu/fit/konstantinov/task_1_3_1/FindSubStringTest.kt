@@ -6,12 +6,12 @@ import kotlin.test.assertEquals
 class FindSubStringTest {
     @Test
     fun testSimple() {
-        val subString = "три"
-        val subString2 = "ноль"
+        val subString = "thr"
+        val subString2 = "zero"
         val path = "src/test/kotlin/ru/nsu/fit/konstantinov/task_1_3_1/input.txt"
         assertEquals(
             FindSubString().findSubStringInFile(path, subString), arrayListOf(
-                8, 32, 54, 76, 106, 128, 150, 172, 198, 220, 242, 264, 286, 310, 332, 354, 376, 402, 424, 446, 468
+                8, 37, 62, 82, 107, 125, 150, 175, 200, 219, 244, 266, 291, 309, 334, 420, 445
             )
         )
         assertEquals(FindSubString().findSubStringInFile(path, subString2), arrayListOf())
