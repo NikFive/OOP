@@ -1,21 +1,21 @@
 package ru.nsu.fit.konstantinov.task_1_3_1
 
-import java.io.BufferedReader
-import java.io.File
+import java.io.InputStream
 
 class FindSubString {
-    fun findSubStringInFile(path: String, subString: String): ArrayList<Int> {
+
+    fun findSubStringInFile(stream: InputStream, subString: String): ArrayList<Int> {
         val result = arrayListOf<Int>()
-        val bufferedReader: BufferedReader = File(path).bufferedReader()
         var currentLen = 0
         var size = 0
-        val bufferSize = 5
-        val buffer = CharArray(bufferSize)
-        var ending = ""
+        val bufferedReader = stream.bufferedReader()
+        val bufferSize = subString.length + 2
+        var ending = charArrayOf()
         while (size != -1) {
+            val buffer = CharArray(bufferSize)
             size = bufferedReader.read(buffer)
-            val string = ending + String(buffer)
-            ending = buffer.drop(subString.length).joinToString("")
+            val string = ending + buffer
+            ending = buffer.drop(subString.length).toCharArray()
             result += if (currentLen != 0) {
                 kmpAlgorithm(subString, string, currentLen - subString.length + 1)
             } else {
@@ -26,10 +26,10 @@ class FindSubString {
         return result
     }
 
-    private fun kmpAlgorithm(subString: String, string: String, shift: Int): ArrayList<Int> {
+    private fun kmpAlgorithm(subString: String, string: CharArray, shift: Int): ArrayList<Int> {
         val result = arrayListOf<Int>()
         val subStringLength = subString.length
-        val stringLength = string.length
+        val stringLength = string.size
 
         val prefixArray = IntArray(subStringLength)
         computePrefixArray(subString, subStringLength, prefixArray)
