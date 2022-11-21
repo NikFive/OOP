@@ -13,8 +13,14 @@ class FindSubStringTest {
         assertEquals(
             arrayListOf(
                 8, 37, 62, 82, 107, 125, 150, 175, 200, 219, 244, 266, 291, 309, 334, 420, 445
-            ), FindSubString().findSubStringInFile(File(path).inputStream(), subString)
+            ), FindSubString().findSubStringInStreamKMP(File(path).inputStream(), subString)
         )
-        assertEquals(FindSubString().findSubStringInFile(File(path).inputStream(), subString2), arrayListOf())
+        assertEquals(
+            arrayListOf(
+                8, 37, 62, 82, 107, 125, 150, 175, 200, 219, 244, 266, 291, 309, 334, 420, 445
+            ), FindSubString().findSubStringInStreamAho(File(path).inputStream(), subString)
+        )
+        assertEquals(FindSubString().findSubStringInStreamKMP(File(path).inputStream(), subString2), arrayListOf())
+        assertEquals(FindSubString().findSubStringInStreamAho(File(path).inputStream(), subString2), arrayListOf())
     }
 }

@@ -1,10 +1,14 @@
 package ru.nsu.fit.konstantinov.task_1_3_1
 
+import java.io.BufferedReader
 import java.io.InputStream
+import java.io.InputStreamReader
 
 class FindSubString {
+    private var states: HashMap<Int, HashMap<Char, Int>> = HashMap()
+    private var bufferSize = 4096
 
-    fun findSubStringInFile(stream: InputStream, subString: String): ArrayList<Int> {
+    fun findSubStringInStreamKMP(stream: InputStream, subString: String): ArrayList<Int> {
         val result = arrayListOf<Int>()
         var currentLen = 0
         var size = 0
@@ -68,6 +72,47 @@ class FindSubString {
                     count++
                 }
             }
+        }
+    }
+
+    fun findSubStringInStreamAho(stream: InputStream, subString: String): ArrayList<Int> {
+        generateStates(subString)
+        while (bufferSize < subString.length) {
+            bufferSize *= 2
+        }
+        val bufferedReader = BufferedReader(InputStreamReader(stream), bufferSize)
+        val result = ArrayList<Int>()
+        var curStates = ArrayList<Int>()
+        curStates.add(0)
+        var counter = 0
+        while (bufferedReader.ready()) {
+            var newStates = ArrayList<Int>()
+            val tmpChar = bufferedReader.read().toChar()
+            for (state in curStates) {
+                if (states[state]?.containsKey(tmpChar) == true) {
+                    if (states[state]?.get(tmpChar) == subString.length) {
+                        result.add(counter - subString.length + 1)
+                        newStates = ArrayList()
+                        break
+                    }
+                    states[state]?.get(tmpChar)?.let { newStates.add(it) }
+                }
+                if (state != 0 && states[0]?.containsKey(tmpChar) == true) {
+                    states[0]?.get(tmpChar)?.let { newStates.add(it) }
+                }
+            }
+            newStates.add(0)
+            curStates = newStates
+            counter++
+        }
+        return result
+    }
+
+    private fun generateStates(inputString: String) {
+        for (i in inputString.indices) {
+            val currentStateMap = HashMap<Char, Int>()
+            currentStateMap[inputString[i]] = i + 1
+            states[i] = currentStateMap
         }
     }
 }
