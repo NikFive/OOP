@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class GradeBookTest {
     @Test
     fun simpleTest() {
-        val me = GradeBook(210643, "Konstantinov Nikita Igorevich", "FIT", "СSaSD")
+        val me = GradeBook(210643, "Konstantinov Nikita Igorevich", "FIT", "СSaSD", 8)
         me.addGrade("Math", 4, 1)
         me.addGrade("History", 4, 1)
         me.addGrade("Haskell", 5, 1)
@@ -21,5 +21,6 @@ class GradeBookTest {
         assertEquals(4.5, me.getAverageMark())
         assertEquals(false, me.bigScholarshipInNextSemester(1))
         assertEquals(false, me.redDiploma())
+        me.printGradeBook()
     }
 }

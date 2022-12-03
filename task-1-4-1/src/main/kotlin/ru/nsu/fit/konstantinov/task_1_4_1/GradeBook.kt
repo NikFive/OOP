@@ -2,11 +2,13 @@ package ru.nsu.fit.konstantinov.task_1_4_1
 
 
 class GradeBook(
-    val id: Int, val fullName: String, val faculty: String, val specialty: String
+    val id: Int, val fullName: String, val faculty: String, val specialty: String, val semestersCount: Int
 ) {
-    private val semesters: MutableList<Semester> = mutableListOf(
-        Semester(), Semester(), Semester(), Semester(), Semester(), Semester(), Semester(), Semester()
-    )
+    private val semesters: MutableList<Semester> = mutableListOf<Semester>().apply {
+        for (i in 1..semestersCount) {
+            this.add(Semester())
+        }
+    }
 
     fun addGrade(subject: String, grade: Int, semesterNumber: Int) {
         semesters[semesterNumber - 1].semesterGrades[subject] = grade
@@ -46,6 +48,21 @@ class GradeBook(
             return false
         }
         return true
+    }
+
+    fun printGradeBook() {
+        var count = 0
+        print("GradeBook\n")
+        print("ID: $id, Full Name: $fullName, Faculty: $faculty, Specialty: $specialty\n")
+        for (i in semesters) {
+            print("=====================\n")
+            print("Number of semester: ${count + 1}\n")
+            for (j in semesters[count].semesterGrades) {
+                println(j.key + ": " + j.value)
+            }
+            count++
+            print("=====================\n")
+        }
     }
 
     private data class Semester(val semesterGrades: HashMap<String, Int> = HashMap())
