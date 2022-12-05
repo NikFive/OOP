@@ -7,6 +7,8 @@ class MyCalc {
             fun operation(operationName: String, first: Double, second: Double) = when (operationName) {
                 "+" -> PlusClass(first, second).operation()
                 "-" -> MinusClass(first, second).operation()
+                "*" -> MultiplyClass(first, second).operation()
+                "/" -> DivideClass(first, second).operation()
                 else -> throw Exception("I don't know how to deal with $operationName.")
             }
         }
@@ -18,6 +20,13 @@ class MyCalc {
         class MinusClass(private val first: Double, private val second: Double) : CalcOperation {
             fun operation() = first - second
         }
-    }
 
+        class MultiplyClass(private val first: Double, private val second: Double) : CalcOperation {
+            fun operation() = first * second
+        }
+
+        class DivideClass(private val first: Double, private val second: Double) : CalcOperation {
+            fun operation() = first / second
+        }
+    }
 }
