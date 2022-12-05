@@ -1,0 +1,10 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.Companion.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation.DivideClass///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.DivideClass.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation.MinusClass///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.MinusClass.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation.MultiplyClass///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.MultiplyClass.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation.PlusClass///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.PlusClass.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.CalcOperation///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.CalcOperation.html
+ru.nsu.fit.konstantinov.task_1_5_1
+
