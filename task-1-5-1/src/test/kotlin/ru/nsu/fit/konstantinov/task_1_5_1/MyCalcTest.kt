@@ -9,6 +9,8 @@ class MyCalcTest {
     fun test() {
         assertEquals(5.0, MyCalc.CalcOperation.operation("+", 2.0, 3.0))
         assertEquals(-1.0, MyCalc.CalcOperation.operation("-", 2.0, 3.0))
+        assertEquals(6.0, MyCalc.CalcOperation.operation("*", 2.0, 3.0))
+        assertEquals(1.5, MyCalc.CalcOperation.operation("/", 3.0, 2.0))
         Assertions.assertThrows(Exception::class.java) {
             MyCalc.CalcOperation.operation("A", 2.0, 3.0)
         }
