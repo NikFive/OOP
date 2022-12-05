@@ -1,6 +1,5 @@
 package ru.nsu.fit.konstantinov.task_1_5_1
 
-
 class MyCalc {
     companion object {
         fun calculate(input: String): Double {
@@ -26,11 +25,13 @@ class MyCalc {
         }
 
         private fun getOperationStart(arrayToCheck: Array<String>): Int {
-            var result: Int = arrayToCheck.size
-            for (i in arrayToCheck.indices) {
+            var result = -1
+            var i = 0
+            while ((i < arrayToCheck.size) && (result == -1)) {
                 if (arrayToCheck[i].toDoubleOrNull() == null) {
                     result = i
                 }
+                i++
             }
             return result
         }
