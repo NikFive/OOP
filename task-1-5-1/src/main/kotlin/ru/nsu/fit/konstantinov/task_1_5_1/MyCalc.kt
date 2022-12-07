@@ -1,37 +1,20 @@
 package ru.nsu.fit.konstantinov.task_1_5_1
 
+import java.util.*
+
 class MyCalc {
     companion object {
         fun calculate(input: String): Double {
-            val reversedArray = input.split(" ").reversed().toTypedArray()
             var result = 0.0
-            var operationIndex = getOperationStart(reversedArray)
-            var valueIndex = 0
-            while (operationIndex < reversedArray.size) {
-                if (valueIndex == 0) {
-                    result = CalcOperation.operation(
-                        reversedArray[operationIndex], reversedArray[0].toDouble(), reversedArray[1].toDouble()
-                    )
-                    valueIndex = 2
+            val valueStack = Stack<Double>()
+            val reversedInput = input.split(" ").reversed()
+            for (i in reversedInput) {
+                if (i.toDoubleOrNull() != null) {
+                    valueStack.add(i.toDouble())
                 } else {
-                    result = CalcOperation.operation(
-                        reversedArray[operationIndex], result, reversedArray[valueIndex].toDouble()
-                    )
-                    valueIndex++
+                    result = CalcOperation.operation(i, valueStack.pop(), valueStack.pop())
+                    valueStack.add(result)
                 }
-                operationIndex++
-            }
-            return result
-        }
-
-        private fun getOperationStart(arrayToCheck: Array<String>): Int {
-            var result = -1
-            var i = 0
-            while ((i < arrayToCheck.size) && (result == -1)) {
-                if (arrayToCheck[i].toDoubleOrNull() == null) {
-                    result = i
-                }
-                i++
             }
             return result
         }
