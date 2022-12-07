@@ -1,6 +1,7 @@
 package ru.nsu.fit.konstantinov.task_1_5_1
 
 import org.junit.jupiter.api.Assertions
+import java.math.RoundingMode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -18,6 +19,7 @@ class MyCalcTest {
         assertEquals(3.0, MyCalc.calculate("sqrt + - 64 * 15 4 / 20 4 3"))
         assertEquals(0.0, MyCalc.calculate("sin + - 1 2 1"))
         assertEquals(1.0, MyCalc.calculate("cos + - 1 2 1"))
+        assertEquals(0.5, MyCalc.calculate("cos rad 60").toBigDecimal().setScale(15, RoundingMode.DOWN).toDouble())
         Assertions.assertThrows(Exception::class.java) {
             MyCalc.calculate("L 2.0 3.0")
         }

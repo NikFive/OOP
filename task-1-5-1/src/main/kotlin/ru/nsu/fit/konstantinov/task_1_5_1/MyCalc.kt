@@ -15,7 +15,10 @@ class MyCalc {
         private val unaryOperations: HashMap<String, (first: Double) -> Double> =
             hashMapOf(Pair("sin") { first: Double -> sin(first) },
                 Pair("cos") { first: Double -> cos(first) },
-                Pair("sqrt") { first: Double -> sqrt(first) })
+                Pair("sqrt") { first: Double -> sqrt(first) },
+                Pair("deg") { first: Double -> toDeg(first) },
+                Pair("rad") { first: Double -> toRad(first) })
+
         fun calculate(input: String): Double {
             var result = 0.0
             val valueStack = Stack<Double>()
@@ -36,5 +39,8 @@ class MyCalc {
             }
             return result
         }
+
+        private fun toRad(number: Double) = number * PI / 180
+        private fun toDeg(number: Double) = number * 180 / PI
     }
 }
