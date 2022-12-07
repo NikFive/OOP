@@ -10,8 +10,9 @@ class MyCalcTest {
         assertEquals(5.0, MyCalc.calculate("+ 2.0 3.0"))
         assertEquals(10.0, MyCalc.calculate("+ + 5.0 2.0 3.0"))
         assertEquals(2.0, MyCalc.calculate("+ - 3.0 3.0 2.0"))
-        assertEquals(-3.0, MyCalc.calculate("* - 3.0 3.0 2.0"))
-        assertEquals(1.0, MyCalc.calculate("/ + 5.0 3.0 2.0"))
+        assertEquals(0.0, MyCalc.calculate("* - 3.0 3.0 2.0"))
+        assertEquals(4.0, MyCalc.calculate("/ + 5.0 3.0 2.0"))
+        assertEquals(9.0, MyCalc.calculate("+ - 64 * 15 4 / 20 4"))
         Assertions.assertThrows(Exception::class.java) {
             MyCalc.calculate("L 2.0 3.0")
         }
