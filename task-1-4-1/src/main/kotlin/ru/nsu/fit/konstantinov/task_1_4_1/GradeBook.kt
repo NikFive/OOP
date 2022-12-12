@@ -2,8 +2,50 @@ package ru.nsu.fit.konstantinov.task_1_4_1
 
 
 class GradeBook(
-    val id: Int, val fullName: String, val faculty: String, val specialty: String, val semestersCount: Int
+    val id: Int, val fullName: String, val faculty: String, val specialty: String, private val semestersCount: Int
 ) {
+    enum class SubjectType {
+        EXAM, CREDIT, DIFF_CREDIT
+    }
+
+    interface Grade {
+        val grade: Int
+    }
+
+    enum class SimpleGrade : Grade {
+        NOT_PASSED {
+            override val grade: Int
+                get() = 0
+        },
+        PASSED {
+            override val grade: Int
+                get() = 5
+        };
+    }
+
+    enum class ComplexGrade : Grade {
+        POOR {
+            override val grade: Int
+                get() = 2
+        },
+        SATISFACTORY {
+            override val grade: Int
+                get() = 3
+        },
+        GOOD {
+            override val grade: Int
+                get() = 4
+        },
+        EXCELLENT {
+            override val grade: Int
+                get() = 5
+        };
+    }
+
+    data class Subject(
+        val name: String, val subjectType: SubjectType, val grade: Grade
+    )
+
     private val semesters: MutableList<Semester> = mutableListOf<Semester>().apply {
         for (i in 1..semestersCount) {
             this.add(Semester())
@@ -65,5 +107,5 @@ class GradeBook(
         }
     }
 
-    private data class Semester(val semesterGrades: HashMap<String, Int> = HashMap())
+    private data class Semester(val semesterGrades: HashMap<String, Subject> = HashMap())
 }
