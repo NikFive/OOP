@@ -9,42 +9,18 @@ class GradeBook(
     }
 
     interface Grade {
-        val grade: Int
+        var grade: Int
     }
 
-    enum class SimpleGrade : Grade {
-        NOT_PASSED {
-            override val grade: Int
-                get() = 0
-        },
-        PASSED {
-            override val grade: Int
-                get() = 5
-        };
+    enum class SimpleGrade(override var grade: Int) : Grade {
+        NOT_PASSED(0), PASSED(5);
     }
 
-    enum class ComplexGrade : Grade {
-        POOR {
-            override val grade: Int
-                get() = 2
-        },
-        SATISFACTORY {
-            override val grade: Int
-                get() = 3
-        },
-        GOOD {
-            override val grade: Int
-                get() = 4
-        },
-        EXCELLENT {
-            override val grade: Int
-                get() = 5
-        };
+    enum class ComplexGrade(override var grade: Int) : Grade {
+        POOR(2), SATISFACTORY(3), GOOD(4), EXCELLENT(5)
     }
 
-    data class Subject(
-        val name: String, val subjectType: SubjectType, val grade: Grade
-    )
+    private data class Subject(var subjectType: SubjectType, var grade: Grade)
 
     private val semesters: MutableList<Semester> = mutableListOf<Semester>().apply {
         for (i in 1..semestersCount) {
@@ -52,13 +28,32 @@ class GradeBook(
         }
     }
 
-    fun addGrade(subject: String, grade: Int, semesterNumber: Int) {
-        semesters[semesterNumber - 1].semesterGrades[subject] = grade
+    fun addGrade(subject: String, grade: Grade, semesterNumber: Int, subjectType: SubjectType) {
+        semesters[semesterNumber - 1].semesterGrades[subject] = Subject(subjectType, grade)
+        semesters[semesterNumber - 1].semesterGrades[subject]?.let { validateSubject(it) }
     }
 
-    fun getGrade(subject: String, semesterNumber: Int) = semesters[semesterNumber - 1].semesterGrades[subject]
+    private fun validateSubject(subject: Subject) {
+        if (subject.grade == SimpleGrade.PASSED || subject.grade == SimpleGrade.NOT_PASSED) {
+            if (subject.subjectType == SubjectType.DIFF_CREDIT || subject.subjectType == SubjectType.EXAM) {
+                throw Exception("Subject type and grade type are not match.")
+            }
+        } else {
+            if (subject.subjectType == SubjectType.CREDIT) {
+                throw Exception("Subject type and grade type are not match.")
+            }
+        }
+    }
 
-    fun getSemesterGrades(semesterNumber: Int) = semesters[semesterNumber - 1].semesterGrades.values
+    fun getGrade(subject: String, semesterNumber: Int) = semesters[semesterNumber - 1].semesterGrades[subject]?.grade
+
+    fun getSemesterGrades(semesterNumber: Int): ArrayList<Grade> {
+        val arrayList: ArrayList<Grade> = arrayListOf()
+        for (i in semesters[semesterNumber - 1].semesterGrades.values) {
+            arrayList.add(i.grade)
+        }
+        return arrayList
+    }
 
     fun getSemesterSubjects(semesterNumber: Int) = semesters[semesterNumber - 1].semesterGrades.keys
 
@@ -66,8 +61,12 @@ class GradeBook(
         var sum = 0.0
         var count = 0.0
         for (i in semesters) {
-            sum += i.semesterGrades.values.sum()
-            count += i.semesterGrades.values.size
+            for (j in i.semesterGrades.values) {
+                if (j.subjectType != SubjectType.CREDIT) {
+                    sum += j.grade.grade
+                    count += 1
+                }
+            }
         }
         return sum / count
     }
@@ -75,15 +74,21 @@ class GradeBook(
     fun bigScholarshipInNextSemester(semesterNumber: Int): Boolean {
         var sum = 0.0
         var count = 0.0
-        sum += semesters[semesterNumber].semesterGrades.values.sum()
+        for (i in semesters[semesterNumber].semesterGrades.values) {
+            if (i.subjectType != SubjectType.CREDIT) {
+                sum += i.grade.grade
+            }
+        }
         count += semesters[semesterNumber].semesterGrades.values.size
         return (sum / count) == 5.0
     }
 
     fun redDiploma(): Boolean {
         for (i in semesters) {
-            if (i.semesterGrades.values.contains(3)) {
-                return false
+            for (j in i.semesterGrades.values) {
+                if (j.grade.grade == 3) {
+                    return false
+                }
             }
         }
         if (getAverageMark() < 4.75) {
@@ -93,18 +98,28 @@ class GradeBook(
     }
 
     fun printGradeBook() {
-        var count = 0
         print("GradeBook\n")
         print("ID: $id, Full Name: $fullName, Faculty: $faculty, Specialty: $specialty\n")
-        for (i in semesters) {
+        for ((count, _) in semesters.withIndex()) {
             print("=====================\n")
             print("Number of semester: ${count + 1}\n")
             for (j in semesters[count].semesterGrades) {
-                println(j.key + ": " + j.value)
+                println(j.key + ": " + j.value.subjectType + " " + j.value.grade)
             }
-            count++
             print("=====================\n")
         }
+    }
+
+    fun getSubjectType(subject: String, semester: Int) = semesters[semester - 1].semesterGrades[subject]?.subjectType
+
+    fun getSubjectsWithType(semester: Int, subjectType: SubjectType): ArrayList<String> {
+        val arrayList = arrayListOf<String>()
+        for (i in semesters[semester - 1].semesterGrades) {
+            if (i.value.subjectType == subjectType) {
+                arrayList.add(i.key)
+            }
+        }
+        return arrayList
     }
 
     private data class Semester(val semesterGrades: HashMap<String, Subject> = HashMap())
