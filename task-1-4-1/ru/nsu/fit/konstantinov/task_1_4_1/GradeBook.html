@@ -141,6 +141,34 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public enum</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="GradeBook.SubjectType.html">GradeBook.SubjectType</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="GradeBook.Grade.html">GradeBook.Grade</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public enum</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="GradeBook.SimpleGrade.html">GradeBook.SimpleGrade</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public enum</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="GradeBook.ComplexGrade.html">GradeBook.ComplexGrade</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -185,12 +213,6 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                         <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#specialty>specialty</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#semestersCount>semestersCount</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -306,38 +328,30 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                         </tr>
                                         
                                         <tr id="i4" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#getSemestersCount()>getSemestersCount</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#addGrade(String,GradeBook.Grade,Integer,GradeBook.SubjectType)>addGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=GradeBook.Grade.html>GradeBook.Grade</a> grade, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber, <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a> subjectType) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#addGrade(String,Integer,Integer)>addGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> grade, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code>final <a href=GradeBook.Grade.html>GradeBook.Grade</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#getGrade(String,Integer)>getGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i7" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html>Collection</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt;</code>
+                                        <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>ArrayList</a>&lt;<a href=GradeBook.Grade.html>GradeBook.Grade</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#getSemesterGrades(Integer)>getSemesterGrades</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i8" class="altColor">
+                                        <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#getSemesterSubjects(Integer)>getSemesterSubjects</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber) </code>
@@ -345,7 +359,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i9" class="rowColor">
+                                        <tr id="i8" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html>Double</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#getAverageMark()>getAverageMark</a>() </code>
@@ -353,7 +367,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i10" class="altColor">
+                                        <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#bigScholarshipInNextSemester(Integer)>bigScholarshipInNextSemester</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber) </code>
@@ -361,7 +375,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i11" class="rowColor">
+                                        <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#redDiploma()>redDiploma</a>() </code>
@@ -369,10 +383,26 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=GradeBook.html#printGradeBook()>printGradeBook</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code>final <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#getSubjectType(String,Integer)>getSubjectType</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semester) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>ArrayList</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=GradeBook.html#getSubjectsWithType(Integer,GradeBook.SubjectType)>getSubjectsWithType</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semester, <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a> subjectType) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -491,22 +521,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                     </li>
                                 </ul>
                                 
-                                <a id="getSemestersCount()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getSemestersCount</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=GradeBook.html#getSemestersCount()>getSemestersCount</a>()</pre>
-                                        <div class="block"></div>
-                                        
-                                        <!-- TODO missing return annotation -->
-                                    </li>
-                                </ul>
-                                
-                                <a id="addGrade(String,Integer,Integer)">
+                                <a id="addGrade(String,GradeBook.Grade,Integer,GradeBook.SubjectType)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -514,7 +529,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                           >
                                     <li class="blockList">
                                         <h4>addGrade</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=GradeBook.html#addGrade(String,Integer,Integer)>addGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> grade, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber)</pre>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=GradeBook.html#addGrade(String,GradeBook.Grade,Integer,GradeBook.SubjectType)>addGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=GradeBook.Grade.html>GradeBook.Grade</a> grade, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber, <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a> subjectType)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -529,7 +544,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                           >
                                     <li class="blockList">
                                         <h4>getGrade</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=GradeBook.html#getGrade(String,Integer)>getGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber)</pre>
+                                        <pre class="methodSignature"> final <a href=GradeBook.Grade.html>GradeBook.Grade</a> <a href=GradeBook.html#getGrade(String,Integer)>getGrade</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -544,7 +559,7 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                           >
                                     <li class="blockList">
                                         <h4>getSemesterGrades</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html>Collection</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt; <a href=GradeBook.html#getSemesterGrades(Integer)>getSemesterGrades</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber)</pre>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>ArrayList</a>&lt;<a href=GradeBook.Grade.html>GradeBook.Grade</a>&gt; <a href=GradeBook.html#getSemesterGrades(Integer)>getSemesterGrades</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semesterNumber)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
@@ -615,11 +630,41 @@ public final class <span class="typeNameLabel"><a href=GradeBook.html>GradeBook<
                                     <!--   -->
                                 </a>
                                 <ul class=
-                                              "blockListLast"
+                                              "blockList"
                                           >
                                     <li class="blockList">
                                         <h4>printGradeBook</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=GradeBook.html#printGradeBook()>printGradeBook</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getSubjectType(String,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getSubjectType</h4>
+                                        <pre class="methodSignature"> final <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a> <a href=GradeBook.html#getSubjectType(String,Integer)>getSubjectType</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> subject, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semester)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getSubjectsWithType(Integer,GradeBook.SubjectType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getSubjectsWithType</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html>ArrayList</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; <a href=GradeBook.html#getSubjectsWithType(Integer,GradeBook.SubjectType)>getSubjectsWithType</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> semester, <a href=GradeBook.SubjectType.html>GradeBook.SubjectType</a> subjectType)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

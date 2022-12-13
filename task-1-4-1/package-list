@@ -1,5 +1,8 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:ru.nsu.fit.konstantinov.task_1_4_1/GradeBook.ComplexGrade///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_4_1/GradeBook.ComplexGrade.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_4_1/GradeBook.Grade///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_4_1/GradeBook.Grade.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_4_1/GradeBook.SimpleGrade///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_4_1/GradeBook.SimpleGrade.html
+$dokka.location:ru.nsu.fit.konstantinov.task_1_4_1/GradeBook.SubjectType///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_4_1/GradeBook.SubjectType.html
 ru.nsu.fit.konstantinov.task_1_4_1
 
