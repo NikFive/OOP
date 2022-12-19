@@ -1,0 +1,1 @@
+var typeSearchIndex = [{"p":"ru.nsu.fit.konstantinov.task_1_5_2","l":"Notebook","url":"ru/nsu/fit/konstantinov/task_1_5_2/Notebook.html"}, {"p":"ru.nsu.fit.konstantinov.task_1_5_2.model","l":"Note","url":"ru/nsu/fit/konstantinov/task_1_5_2/model/Note.html"}, {"l":"All classes","url":"allclasses.html"}]
