@@ -10,17 +10,30 @@ class GradeBook(
 
     interface Grade {
         var grade: Int
+        fun validateSubject(subject: Subject)
     }
 
     enum class SimpleGrade(override var grade: Int) : Grade {
         NOT_PASSED(0), PASSED(5);
+
+        override fun validateSubject(subject: Subject) {
+            if ((subject.subjectType == SubjectType.DIFF_CREDIT) || (subject.subjectType == SubjectType.EXAM)) {
+                throw Exception("Illegal grade for this type of subject.")
+            }
+        }
     }
 
     enum class ComplexGrade(override var grade: Int) : Grade {
-        POOR(2), SATISFACTORY(3), GOOD(4), EXCELLENT(5)
+        POOR(2), SATISFACTORY(3), GOOD(4), EXCELLENT(5);
+
+        override fun validateSubject(subject: Subject) {
+            if ((subject.subjectType == SubjectType.CREDIT)) {
+                throw Exception("Illegal grade for this type of subject.")
+            }
+        }
     }
 
-    private data class Subject(var subjectType: SubjectType, var grade: Grade)
+    data class Subject(var subjectType: SubjectType, var grade: Grade)
 
     private val semesters: MutableList<Semester> = mutableListOf<Semester>().apply {
         for (i in 1..semestersCount) {
@@ -30,19 +43,7 @@ class GradeBook(
 
     fun addGrade(subject: String, grade: Grade, semesterNumber: Int, subjectType: SubjectType) {
         semesters[semesterNumber - 1].semesterGrades[subject] = Subject(subjectType, grade)
-        semesters[semesterNumber - 1].semesterGrades[subject]?.let { validateSubject(it) }
-    }
-
-    private fun validateSubject(subject: Subject) {
-        if (subject.grade == SimpleGrade.PASSED || subject.grade == SimpleGrade.NOT_PASSED) {
-            if (subject.subjectType == SubjectType.DIFF_CREDIT || subject.subjectType == SubjectType.EXAM) {
-                throw Exception("Subject type and grade type are not match.")
-            }
-        } else {
-            if (subject.subjectType == SubjectType.CREDIT) {
-                throw Exception("Subject type and grade type are not match.")
-            }
-        }
+        semesters[semesterNumber - 1].semesterGrades[subject]?.let { grade.validateSubject(it) }
     }
 
     fun getGrade(subject: String, semesterNumber: Int) = semesters[semesterNumber - 1].semesterGrades[subject]?.grade
