@@ -3,8 +3,6 @@ package ru.nsu.fit.konstantinov.task_1_5_1.calculator
 import ru.nsu.fit.konstantinov.task_1_5_1.operator.Operator
 import ru.nsu.fit.konstantinov.task_1_5_1.operator.OperatorFactory
 import ru.nsu.fit.konstantinov.task_1_5_1.operators.MyNumber
-import java.util.*
-import kotlin.collections.ArrayDeque
 
 
 class Calculator {
@@ -29,5 +27,5 @@ class Calculator {
     }
 
     fun addOuterOperators(vararg operators: Operator) =
-        operatorFactory.addOuterOperators(Arrays.stream(operators).toList())
+        operatorFactory.addOuterOperators(operators.toList())
 }
