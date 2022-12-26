@@ -1,5 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1/MyCalc.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/MyCalc.Companion.html
-ru.nsu.fit.konstantinov.task_1_5_1
+$dokka.location:ru.nsu.fit.konstantinov.task_1_5_1.calculator/Calculator.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_1_5_1/calculator/Calculator.Companion.html
+ru.nsu.fit.konstantinov.task_1_5_1.calculator
+ru.nsu.fit.konstantinov.task_1_5_1.operator
+ru.nsu.fit.konstantinov.task_1_5_1.operators
 
