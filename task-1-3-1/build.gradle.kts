@@ -1,8 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.10"
-    kotlin("plugin.serialization") version "1.7.10"
+    kotlin("jvm") version "1.7.10" apply false
     id("org.jetbrains.dokka") version "1.7.10"
     jacoco
     application
@@ -18,7 +17,6 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 }
 
 tasks.test {
