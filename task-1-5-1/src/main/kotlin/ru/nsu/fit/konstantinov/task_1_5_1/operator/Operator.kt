@@ -7,7 +7,7 @@ interface Operator {
     var token: String
     fun calculate(): MyNumber
     fun provideArguments(arity: Int): MutableList<MyNumber> = mutableListOf<MyNumber>().apply {
-        for (i in 0 until arity) {
+        repeat (arity) {
             this.add(Calculator.valueStack.removeLast())
         }
     }
