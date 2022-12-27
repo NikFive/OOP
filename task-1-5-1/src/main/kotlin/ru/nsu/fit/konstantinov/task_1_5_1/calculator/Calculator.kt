@@ -17,14 +17,7 @@ class Calculator {
         }
     }
 
-    fun calculate(expression: String): MyNumber {
-        for (i in expression.split(" ").toTypedArray().reversedArray()) {
-            valueStack.addLast(operatorFactory.callOperator(i).calculate())
-        }
-        check(valueStack.size != 0) { "The expression is incorrect." }
-        return valueStack.removeFirst()
-    }
+    fun calculate(expression: String) = Calculator.calculate(expression)
 
-    fun addOuterOperators(vararg operators: Operator) =
-        operatorFactory.addOuterOperators(operators.toList())
+    fun addOuterOperators(vararg operators: Operator) = operatorFactory.addOuterOperators(operators.toList())
 }
