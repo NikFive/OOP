@@ -11,17 +11,17 @@ class NotebookTest {
         val test = Notebook()
         test.add("First", "Second")
         test.add("Third")
-        assertEquals(arrayListOf("First", "Second", "Third"), test.show())
+        assertEquals(mutableListOf("First", "Second", "Third"), test.show())
         test.rm("Second")
-        assertEquals(arrayListOf("First", "Third"), test.show())
+        assertEquals(mutableListOf("First", "Third"), test.show())
         test.add("Second")
-        assertEquals(arrayListOf("First", "Third", "Second"), test.show())
+        assertEquals(mutableListOf("First", "Third", "Second"), test.show())
         test.add("Second")
         test.add("Second")
-        assertEquals(arrayListOf("First", "Third", "Second", "Second", "Second"), test.show())
+        assertEquals(mutableListOf("First", "Third", "Second", "Second", "Second"), test.show())
         test.rm("Second")
         test.rm("First")
-        assertEquals(arrayListOf("Third"), test.show())
+        assertEquals(mutableListOf("Third"), test.show())
     }
 
     @Test
@@ -33,7 +33,9 @@ class NotebookTest {
         test.add("Second")
         test.add("Third")
         test.add("Fourth")
-        assertEquals(arrayListOf("First"), test.show(from, to))
+        assertEquals(mutableListOf("First"), test.show(from, to))
+        assertEquals(mutableListOf("First"), test.show(from, to, "First"))
+        assertEquals(mutableListOf(), test.show(from, to, "Second"))
     }
 
     private fun convertLongToTime(time: Long) = SimpleDateFormat("yyyy.MM.dd HH:mm:ss:SSS").format(Date(time))
