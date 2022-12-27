@@ -4,10 +4,9 @@ import ru.nsu.fit.konstantinov.task_1_5_1.operator.Operator
 import ru.nsu.fit.konstantinov.task_1_5_1.operator.OperatorFactory
 import ru.nsu.fit.konstantinov.task_1_5_1.operators.MyNumber
 
-
 class Calculator {
     companion object {
-        var valueStack: ArrayDeque<MyNumber> = ArrayDeque()
+        internal val valueStack: ArrayDeque<MyNumber> = ArrayDeque()
         private var operatorFactory: OperatorFactory = OperatorFactory()
         fun calculate(expression: String): MyNumber {
             for (i in expression.split(" ").toTypedArray().reversedArray()) {
