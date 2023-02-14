@@ -1,6 +1,6 @@
 rootProject.name = "OOP"
 plugins {
-    kotlin("jvm") version "1.7.10" apply false
+    kotlin("jvm") version "1.7.20" apply false
 }
 include("task-1-1-1")
 include("task-1-2-1")
