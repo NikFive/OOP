@@ -1,5 +1,5 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1/PrimeNumbers.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/PrimeNumbers.Companion.html
 ru.nsu.fit.konstantinov.task_2_1_1
 
