@@ -45,6 +45,11 @@ tasks.withType<KotlinCompile> {
 }
 
 benchmark {
+    configurations {
+        named("main") {
+            mode = "avgt"
+        }
+    }
     targets {
         register("test") {
             this as kotlinx.benchmark.gradle.JvmBenchmarkTarget
