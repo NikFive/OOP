@@ -5,6 +5,8 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.allopen") version "1.7.20"
     id("org.jetbrains.kotlinx.benchmark") version "0.4.7"
+    id("org.jetbrains.dokka") version "1.7.20"
+    jacoco
 }
 
 group = "ru.nsu.fit.konstantinov.task-2-1-1"
@@ -33,6 +35,7 @@ configure<org.jetbrains.kotlin.allopen.gradle.AllOpenExtension> {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
 }
 
 tasks.withType<KotlinCompile> {
@@ -42,17 +45,56 @@ tasks.withType<KotlinCompile> {
 }
 
 benchmark {
-    configurations {
-        named("main") {
-            iterationTime = 5
-            iterationTimeUnit = "sec"
-
-        }
-    }
     targets {
         register("test") {
             this as kotlinx.benchmark.gradle.JvmBenchmarkTarget
             jmhVersion = "1.21"
         }
     }
+}
+
+tasks.test {
+    useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
+
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+        csv.required.set(false)
+        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+    }
+}
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.5".toBigDecimal()
+            }
+        }
+
+        rule {
+            isEnabled = false
+            element = "CLASS"
+            includes = listOf("org.gradle.*")
+
+            limit {
+                counter = "LINE"
+                value = "TOTALCOUNT"
+                maximum = "0.3".toBigDecimal()
+            }
+        }
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+}
+tasks.dokkaJavadoc.configure {
+    outputDirectory.set(file("javadoc"))
 }
