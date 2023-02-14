@@ -19,6 +19,13 @@ sourceSets.all {
     resources.setSrcDirs(listOf("$name/resources"))
 }
 
+sourceSets.getByName("test") {
+    dependencies {
+        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.7")
+        implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime-jvm:0.4.7")
+    }
+}
+
 configure<org.jetbrains.kotlin.allopen.gradle.AllOpenExtension> {
     annotation("org.openjdk.jmh.annotations.State")
 }
@@ -43,7 +50,7 @@ benchmark {
         }
     }
     targets {
-        register("main") {
+        register("test") {
             this as kotlinx.benchmark.gradle.JvmBenchmarkTarget
             jmhVersion = "1.21"
         }
