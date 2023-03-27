@@ -2,4 +2,7 @@ $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 
 ru.nsu.fit.konstantinov.task_2_2_1
+ru.nsu.fit.konstantinov.task_2_2_1.employees
+ru.nsu.fit.konstantinov.task_2_2_1.models
+ru.nsu.fit.konstantinov.task_2_2_1.work
 
