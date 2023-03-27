@@ -17,6 +17,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+")
 }
 
 tasks.test {
