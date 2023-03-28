@@ -1,13 +1,11 @@
 package ru.nsu.fit.konstantinov.task_2_2_1.work
 
-import java.util.concurrent.atomic.AtomicInteger
-
 class PizzeriaWork {
     var currentOrderId = 0
     private var numOfBakers = 0
     private var numOfDeliveryWorkers = 0
     private var numOfBakersFinishedWork = 0
-    private val numOfDeliveryWorkersFinishedWork: AtomicInteger = AtomicInteger(0)
+    private var numOfDeliveryWorkersFinishedWork = 0
     var isRestaurantClosed = false
 
     /**
@@ -22,7 +20,7 @@ class PizzeriaWork {
      *
      * @return true if all delivery workers finished their work.
      */
-    fun areAllDeliveryWorkersFinishedWork(): Boolean = numOfDeliveryWorkers == numOfDeliveryWorkersFinishedWork.get()
+    fun areAllDeliveryWorkersFinishedWork(): Boolean = numOfDeliveryWorkers == numOfDeliveryWorkersFinishedWork
 
     /**
      * Updates order's id.
@@ -60,7 +58,7 @@ class PizzeriaWork {
      * Ends shift for delivery worker.
      */
     fun endShiftForDeliveryWorker() {
-        numOfDeliveryWorkersFinishedWork.incrementAndGet()
+        numOfDeliveryWorkersFinishedWork++
     }
 
     /**
