@@ -37,7 +37,7 @@ class Pizzeria(
             waitingOrders,
             pizzeriaWork
         )
-        setWainingTime(3000)
+        setWaitingTime(3000)
     }
 
     /**
@@ -103,7 +103,7 @@ class Pizzeria(
      *
      * @param waitingTime waiting time in pizzeria.
      */
-    fun setWainingTime(waitingTime: Int) {
+    fun setWaitingTime(waitingTime: Int) {
         waitingTimeMilliseconds = waitingTime
     }
 }
