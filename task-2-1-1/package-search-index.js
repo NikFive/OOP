@@ -1,1 +1,1 @@
-var packageSearchIndex = [{"l":"ru.nsu.fit.konstantinov.task_2_1_1","url":"ru/nsu/fit/konstantinov/task_2_1_1/package-summary.html"}, {"l":"All packages","url":"index.html"}]
+var packageSearchIndex = [{"l":"ru.nsu.fit.konstantinov.task_2_1_1","url":"ru/nsu/fit/konstantinov/task_2_1_1/package-summary.html"}, {"l":"ru.nsu.fit.konstantinov.task_2_1_1.implementations","url":"ru/nsu/fit/konstantinov/task_2_1_1/implementations/package-summary.html"}, {"l":"All packages","url":"index.html"}]

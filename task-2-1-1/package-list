@@ -1,5 +1,8 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1/PrimeNumbers.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/PrimeNumbers.Companion.html
+$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/Coroutines.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/Coroutines.Companion.html
+$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/ParallelStream.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/ParallelStream.Companion.html
+$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/Serial.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/Serial.Companion.html
 ru.nsu.fit.konstantinov.task_2_1_1
+ru.nsu.fit.konstantinov.task_2_1_1.implementations
 
