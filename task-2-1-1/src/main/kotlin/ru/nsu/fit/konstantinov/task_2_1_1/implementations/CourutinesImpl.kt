@@ -6,9 +6,9 @@ import kotlinx.coroutines.runBlocking
 import ru.nsu.fit.konstantinov.task_2_1_1.PrimeNumbers
 import kotlin.math.sqrt
 
-class Coroutines {
+class CoroutinesImpl {
     companion object : PrimeNumbers {
-        override suspend fun isPrimeNumber(number: Int): Boolean {
+        private suspend fun isPrimeNumber(number: Int): Boolean {
             var result = false
             GlobalScope.async {
                 for (i in 2..sqrt(number.toDouble()).toInt() + 1) {
