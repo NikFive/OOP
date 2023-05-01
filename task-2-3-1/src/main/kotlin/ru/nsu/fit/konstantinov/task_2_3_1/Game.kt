@@ -12,13 +12,21 @@ import javafx.scene.input.KeyCode
 import javafx.scene.layout.VBox
 import javafx.scene.text.Text
 import javafx.stage.Stage
+import ru.nsu.fit.konstantinov.task_2_3_1.config.*
+import ru.nsu.fit.konstantinov.task_2_3_1.model.Direction
+import ru.nsu.fit.konstantinov.task_2_3_1.model.Food
+import ru.nsu.fit.konstantinov.task_2_3_1.model.Snake
+import ru.nsu.fit.konstantinov.task_2_3_1.view.gamefield.foodView
+import ru.nsu.fit.konstantinov.task_2_3_1.view.gamefield.gridView
+import ru.nsu.fit.konstantinov.task_2_3_1.view.gamefield.snakeView
+import ru.nsu.fit.konstantinov.task_2_3_1.view.menu.endGameAlertView
 import java.util.*
 
 class Game : Application() {
 
     private lateinit var timerTask: TimerTask
 
-    lateinit var context: GraphicsContext
+    private lateinit var context: GraphicsContext
 
     lateinit var animationTimer: AnimationTimer
 
@@ -28,7 +36,7 @@ class Game : Application() {
 
     val food: Food = Food()
 
-    var timer: Timer? = null
+    private var timer: Timer? = null
 
     var inProgress = false
 
@@ -110,7 +118,7 @@ class Game : Application() {
             }
         }
 
-        drawGrid()
+        gridView(context)
 
         primaryStage?.apply {
             title = STAGE_NAME
@@ -120,12 +128,12 @@ class Game : Application() {
         animationTimer = object : AnimationTimer() {
             override fun handle(now: Long) {
                 if (inProgress) {
-                    drawGrid()
-                    drawSnake()
-                    drawFood()
+                    gridView(context)
+                    snakeView(snake.headLocation, snake.tail, context)
+                    foodView(food.point, context)
                 } else if (gameOver) {
                     animationTimer.stop()
-                    showEndGameAlert()
+                    endGameAlertView(text(snake.tail.size + 1), context, getTextWidth(text(snake.tail.size + 1)))
                     button.isVisible = true
                     food.foodRest()
                     snake = Snake()
@@ -143,83 +151,29 @@ class Game : Application() {
         timer = null
     }
 
-}
-
-private fun Game.drawFood() =
-    context.apply {
-        fill = FOOD_COLOR
-        fillRect(
-            food.point.x.toDouble(),
-            food.point.y.toDouble(),
-            BLOCK_SIZE_DOUBLE,
-            BLOCK_SIZE_DOUBLE
-        )
+    private fun endGame() {
+        timer?.cancel()
+        timer = null
+        inProgress = false
+        gameOver = true
     }
 
-
-private fun Game.drawSnake() {
-    context.fill = SNAKE_COLOR
-    context.fillRect(
-        snake.headLocation.x.toDouble(),
-        snake.headLocation.y.toDouble(),
-        BLOCK_SIZE_DOUBLE,
-        BLOCK_SIZE_DOUBLE
-    )
-    snake.tail.forEach {
-        context.fillRect(
-            it.x.toDouble(),
-            it.y.toDouble(),
-            BLOCK_SIZE_DOUBLE,
-            BLOCK_SIZE_DOUBLE
-        )
-    }
-}
-
-private fun Game.drawGrid() {
-    context.fill = BLOCK_COLOR
-    context.fillRect(0.0, 0.0, WIDTH_DOUBLE, HEIGHT_DOUBLE)
-
-    context.stroke = LINE_COLOR
-    context.lineWidth = 0.5
-
-    for (element in 0 until WIDTH step BLOCK_SIZE) {
-        context.strokeLine(element.toDouble(), 0.0, element.toDouble(), element + HEIGHT_DOUBLE)
+    private fun getTextWidth(string: String): Double {
+        val text = Text(string)
+        Scene(Group(text))
+        text.applyCss()
+        return text.layoutBounds.width
     }
 
-    for (element in 0 until HEIGHT step BLOCK_SIZE) {
-        context.strokeLine(0.0, element.toDouble(), element + HEIGHT_DOUBLE, element.toDouble())
-    }
-}
-
-private fun Game.showEndGameAlert() {
-    val text = text(snake.tail.size + 1)
-    val textWidth = getTextWidth(text)
-    context.fill = TEXT_COLOR
-    context.fillText(text, (WIDTH / 2) - (textWidth / 2), HEIGHT / 2 - 48.toDouble())
-}
-
-private fun Game.endGame() {
-    timer?.cancel()
-    timer = null
-    inProgress = false
-    gameOver = true
-}
-
-private fun getTextWidth(string: String): Double {
-    val text = Text(string)
-    Scene(Group(text))
-    text.applyCss()
-    return text.layoutBounds.width
-}
-
-private fun Game.createTask() = object : TimerTask() {
-    override fun run() {
-        if (inProgress) {
-            snake.snakeUpdate()
-            if (snake.isCollidedWithWall || snake.isTouchTheTail()) endGame()
-            if (food.touchFood(snake)) {
-                snake.addTail()
-                food.addFood()
+    private fun createTask() = object : TimerTask() {
+        override fun run() {
+            if (inProgress) {
+                snake.snakeUpdate()
+                if (snake.isCollidedWithWall || snake.isTouchTheTail()) endGame()
+                if (food.touchFood(snake)) {
+                    snake.addTail()
+                    food.addFood()
+                }
             }
         }
     }

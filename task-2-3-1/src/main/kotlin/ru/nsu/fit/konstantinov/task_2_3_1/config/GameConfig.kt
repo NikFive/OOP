@@ -1,4 +1,4 @@
-package ru.nsu.fit.konstantinov.task_2_3_1
+package ru.nsu.fit.konstantinov.task_2_3_1.config
 
 import javafx.scene.paint.Color
 
