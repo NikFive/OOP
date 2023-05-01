@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>BakerWork 1.0-SNAPSHOT API </title>
+    <title>CourierModel 1.0-SNAPSHOT API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class BakerWork" class="title">Class BakerWork</h2>
+        <h2 title="Class CourierModel" class="title">Class CourierModel</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,22 +108,14 @@ var pathtoroot = "../../../../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>java.lang.Runnable</code>
-                            
-                            ,
-                            
-                            
-                            <code>ru.nsu.fit.konstantinov.task_2_2_1.work.Work</code>
-                            
-                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork</a></span>
- implements <a href=Work.html>Work</a>
+public final class <span class="typeNameLabel"><a href=CourierModel.html>CourierModel</a></span>
+
                     </pre>
                     <div class="block"></div>
                 </li>
@@ -172,6 +164,18 @@ public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork<
                                             <th class="colLast" scope="col">Description</th>
                                         </tr>
                                         
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=CourierModel.html#bagCapacity>bagCapacity</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=CourierModel.html#deliveryTime>deliveryTime</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </li>
@@ -198,7 +202,7 @@ public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork<
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#BakerWork(List)">BakerWork</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../persons/Baker.html>Baker</a>&gt; bakers)</code></th>
+                                                        href="#CourierModel(Integer,Integer)">CourierModel</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> bagCapacity, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> deliveryTime)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -252,17 +256,17 @@ public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork<
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerWork.html#stopWork()>stopWork</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CourierModel.html#getBagCapacity()>getBagCapacity</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerWork.html#run()>run</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CourierModel.html#getDeliveryTime()>getDeliveryTime</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -298,11 +302,11 @@ public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork<
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="BakerWork(List)"></a>
+                                <a name="CourierModel(Integer,Integer)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>BakerWork</h4>
-                                        <pre>BakerWork(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../persons/Baker.html>Baker</a>&gt; bakers)</pre>
+                                        <h4>CourierModel</h4>
+                                        <pre>CourierModel(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> bagCapacity, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> deliveryTime)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -321,30 +325,30 @@ public final class <span class="typeNameLabel"><a href=BakerWork.html>BakerWork<
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="stopWork()">
+                                <a id="getBagCapacity()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>stopWork</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BakerWork.html#stopWork()>stopWork</a>()</pre>
+                                        <h4>getBagCapacity</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=CourierModel.html#getBagCapacity()>getBagCapacity</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="run()">
+                                <a id="getDeliveryTime()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>run</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BakerWork.html#run()>run</a>()</pre>
+                                        <h4>getDeliveryTime</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=CourierModel.html#getDeliveryTime()>getDeliveryTime</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->

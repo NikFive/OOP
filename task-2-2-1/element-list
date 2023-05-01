@@ -1,8 +1,11 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
-
+$dokka.location:ru.nsu.fit.konstantinov.task_2_2_1.utils/ConfigParser.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_2_1/utils/ConfigParser.Companion.html
 ru.nsu.fit.konstantinov.task_2_2_1
-ru.nsu.fit.konstantinov.task_2_2_1.employees
 ru.nsu.fit.konstantinov.task_2_2_1.models
+ru.nsu.fit.konstantinov.task_2_2_1.persons
+ru.nsu.fit.konstantinov.task_2_2_1.pizzeria
+ru.nsu.fit.konstantinov.task_2_2_1.pizzeria.order
+ru.nsu.fit.konstantinov.task_2_2_1.utils
 ru.nsu.fit.konstantinov.task_2_2_1.work
 

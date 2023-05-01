@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>BakerConfig 1.0-SNAPSHOT API </title>
+    <title>Warehouse 1.0-SNAPSHOT API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
-        <h2 title="Class BakerConfig" class="title">Class BakerConfig</h2>
+        <h2 title="Class Warehouse" class="title">Class Warehouse</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -114,7 +114,7 @@ var pathtoroot = "../../../../../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerConfig</a></span>
+public final class <span class="typeNameLabel"><a href=Warehouse.html>Warehouse</a></span>
 
                     </pre>
                     <div class="block"></div>
@@ -165,14 +165,8 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#id>id</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="rowColor">
-                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#cookingTime>cookingTime</a></code></th>
+                                            <td class="colFirst"><code>private final <a href=order/Order.html>Order</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=Warehouse.html#pizza>pizza</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -202,7 +196,7 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#BakerConfig(Integer,Integer)">BakerConfig</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> id, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> cookingTime)</code></th>
+                                                        href="#Warehouse(Integer)">Warehouse</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> capacity)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -256,9 +250,9 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code>final <a href=order/Order.html>Order</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#getId()>getId</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Warehouse.html#getPizza()>getPizza</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -266,23 +260,23 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                                         <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#setId(Integer)>setId</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> id) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Warehouse.html#addPizza(Order)>addPizza</a>(<a href=order/Order.html>Order</a> order) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#getCookingTime()>getCookingTime</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=Warehouse.html#isFull()>isFull</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=BakerConfig.html#setCookingTime(Integer)>setCookingTime</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> cookingTime) </code>
+                                            <th class="colSecond" scope="row"><code><a href=Warehouse.html#isEmpty()>isEmpty</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -318,11 +312,11 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="BakerConfig(Integer,Integer)"></a>
+                                <a name="Warehouse(Integer)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>BakerConfig</h4>
-                                        <pre>BakerConfig(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> id, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> cookingTime)</pre>
+                                        <h4>Warehouse</h4>
+                                        <pre>Warehouse(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> capacity)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -341,60 +335,60 @@ public final class <span class="typeNameLabel"><a href=BakerConfig.html>BakerCon
                             </a>
                                 <h3>Method Detail</h3>
                                 
-                                <a id="getId()">
+                                <a id="getPizza()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getId</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=BakerConfig.html#getId()>getId</a>()</pre>
+                                        <h4>getPizza</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-synchronized/index.html>Synchronized</a>() final <a href=order/Order.html>Order</a> <a href=Warehouse.html#getPizza()>getPizza</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="setId(Integer)">
+                                <a id="addPizza(Order)">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>setId</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BakerConfig.html#setId(Integer)>setId</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> id)</pre>
+                                        <h4>addPizza</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-synchronized/index.html>Synchronized</a>() final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=Warehouse.html#addPizza(Order)>addPizza</a>(<a href=order/Order.html>Order</a> order)</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="getCookingTime()">
+                                <a id="isFull()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockList"
                                           >
                                     <li class="blockList">
-                                        <h4>getCookingTime</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> <a href=BakerConfig.html#getCookingTime()>getCookingTime</a>()</pre>
+                                        <h4>isFull</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=Warehouse.html#isFull()>isFull</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
                                     </li>
                                 </ul>
                                 
-                                <a id="setCookingTime(Integer)">
+                                <a id="isEmpty()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>setCookingTime</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BakerConfig.html#setCookingTime(Integer)>setCookingTime</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> cookingTime)</pre>
+                                        <h4>isEmpty</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=Warehouse.html#isEmpty()>isEmpty</a>()</pre>
                                         <div class="block"></div>
                                         
                                         <!-- TODO missing return annotation -->
