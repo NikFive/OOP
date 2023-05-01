@@ -18,6 +18,8 @@ dependencies {
     testImplementation(kotlin("test"))
     dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.11.+")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-RC")
+    implementation ("com.google.code.gson:gson:2.8.5")
 }
 
 tasks.test {

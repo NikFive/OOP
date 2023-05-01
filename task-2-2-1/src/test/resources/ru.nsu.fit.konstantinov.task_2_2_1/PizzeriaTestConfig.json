@@ -1,0 +1,30 @@
+{
+  "bakers": [
+    {
+      "cookingTime": 1000
+    },
+    {
+      "cookingTime": 1001
+    },
+    {
+      "cookingTime": 1000
+    }
+  ],
+  "couriers": [
+    {
+      "bagCapacity": 1,
+      "deliveryTime": 1000
+    },
+    {
+      "bagCapacity": 2,
+      "deliveryTime": 1001
+    },
+    {
+      "bagCapacity": 1,
+      "deliveryTime": 1000
+    }
+  ],
+  "warehouse": {
+    "capacity": 1
+  }
+}

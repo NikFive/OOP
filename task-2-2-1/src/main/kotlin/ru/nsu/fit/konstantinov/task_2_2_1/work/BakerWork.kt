@@ -1,27 +1,18 @@
 package ru.nsu.fit.konstantinov.task_2_2_1.work
 
-import ru.nsu.fit.konstantinov.task_2_2_1.employees.Employees
-import ru.nsu.fit.konstantinov.task_2_2_1.models.FutureSubjectPair
+import ru.nsu.fit.konstantinov.task_2_2_1.persons.Baker
+import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-import java.util.concurrent.locks.Lock
-import java.util.concurrent.locks.ReentrantLock
 
-class BakerWork {
-    val lock: Lock
-    private val bakersAndPizzas: MutableList<FutureSubjectPair>
 
-    init {
-        bakersAndPizzas = ArrayList()
-        lock = ReentrantLock(true)
+class BakerWork(private val bakers: List<Baker>) : Work {
+    private val executorService: ExecutorService = Executors.newFixedThreadPool(bakers.size)
+
+    override fun stopWork() {
+        executorService.shutdownNow()
     }
 
-    fun getBakersAndPizzas(): List<FutureSubjectPair> = bakersAndPizzas
-    fun run(employees: Employees, pizzeriaWork: PizzeriaWork) {
-        pizzeriaWork.setNumberOfBakers(employees.numberOfBakers)
-        val executorService = Executors.newFixedThreadPool(employees.numberOfBakers)
-        for (baker in employees.getBakers()) {
-            baker.setBakers(this)
-            bakersAndPizzas.add(FutureSubjectPair(baker, executorService.submit(baker)))
-        }
+    override fun run() {
+        bakers.forEach(executorService::execute)
     }
 }
