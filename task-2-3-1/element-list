@@ -2,4 +2,8 @@ $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 
 ru.nsu.fit.konstantinov.task_2_3_1
+ru.nsu.fit.konstantinov.task_2_3_1.config
+ru.nsu.fit.konstantinov.task_2_3_1.model
+ru.nsu.fit.konstantinov.task_2_3_1.view.gamefield
+ru.nsu.fit.konstantinov.task_2_3_1.view.menu
 
