@@ -1,10 +1,7 @@
 package ru.nsu.fit.konstantinov.task_2_1_1
 
 import org.openjdk.jmh.annotations.*
-import ru.nsu.fit.konstantinov.task_2_1_1.implementations.CoroutinesImpl
-import ru.nsu.fit.konstantinov.task_2_1_1.implementations.ParallelStreamImpl
-import ru.nsu.fit.konstantinov.task_2_1_1.implementations.SerialImpl
-import ru.nsu.fit.konstantinov.task_2_1_1.implementations.ThreadsImpl
+import ru.nsu.fit.konstantinov.task_2_1_1.implementations.*
 import java.util.concurrent.TimeUnit
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -15,7 +12,7 @@ import kotlin.test.assertEquals
 @Measurement(iterations = 1, time = 1, timeUnit = TimeUnit.SECONDS)
 
 class PrimeNumbersTest {
-    val testData = arrayListOf(
+    val testData3 = arrayListOf(
         6997901,
         6997927,
         6997937,
@@ -35,39 +32,183 @@ class PrimeNumbersTest {
         }
     }
 
-    @Test
-    @Benchmark
-    fun testSerial() {
-        val testArray1 = arrayListOf(6, 8, 7, 13, 9, 4)
-        val testArray2 = testData
-        assertEquals(SerialImpl.containsPrimeNumbers(testArray1), true)
-        assertEquals(SerialImpl.containsPrimeNumbers(testArray2), false)
+    val testData4 = arrayListOf(
+        6997901,
+        6997927,
+        6997937,
+        6997967,
+        6998009,
+    ).apply {
+        for (i in 0..2000) {
+            this.addAll(
+                arrayListOf(
+                    6997901,
+                    6997927,
+                    6997937,
+                    6997967,
+                    6998009,
+                )
+            )
+        }
+    }
+
+    val testData5 = arrayListOf(
+        6997901,
+        6997927,
+        6997937,
+        6997967,
+        6998009,
+    ).apply {
+        for (i in 0..20000) {
+            this.addAll(
+                arrayListOf(
+                    6997901,
+                    6997927,
+                    6997937,
+                    6997967,
+                    6998009,
+                )
+            )
+        }
+    }
+
+    val testData6 = arrayListOf(
+        6997901,
+        6997927,
+        6997937,
+        6997967,
+        6998009,
+    ).apply {
+        for (i in 0..20000) {
+            this.addAll(
+                arrayListOf(
+                    6997901,
+                    6997927,
+                    6997937,
+                    6997967,
+                    6998009,
+                )
+            )
+        }
     }
 
     @Test
     @Benchmark
-    fun testCoroutines() {
-        val testArray1 = arrayListOf(6, 8, 7, 13, 9, 4)
-        val testArray2 = testData
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testArray1), true)
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testArray2), false)
+    fun testSerial3() {
+        assertEquals(SerialImpl.containsPrimeNumbers(testData3), false)
     }
 
     @Test
     @Benchmark
-    fun testParallelStream() {
-        val testArray1 = arrayListOf(6, 8, 7, 13, 9, 4)
-        val testArray2 = testData
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testArray1), true)
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testArray2), false)
+    fun testSerial4() {
+        assertEquals(SerialImpl.containsPrimeNumbers(testData4), false)
     }
 
     @Test
     @Benchmark
-    fun testThreads() {
-        val testArray1 = arrayListOf(6, 8, 7, 13, 9, 4)
-        val testArray2 = testData
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testArray1), true)
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testArray2), false)
+    fun testSerial5() {
+        assertEquals(SerialImpl.containsPrimeNumbers(testData5), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testSerial6() {
+        assertEquals(SerialImpl.containsPrimeNumbers(testData6), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testMultyCoroutines3() {
+        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData3), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testMultyCoroutines4() {
+        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData4), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testMultyCoroutines5() {
+        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData5), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testMultyCoroutines6() {
+        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData6), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testCoroutines3() {
+        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData3), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testCoroutines4() {
+        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData4), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testCoroutines5() {
+        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData5), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testCoroutines6() {
+        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData6), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testParallelStream3() {
+        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData3), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testParallelStream4() {
+        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData4), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testParallelStream5() {
+        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData5), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testParallelStream6() {
+        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData6), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testThreads3() {
+        assertEquals(ThreadsImpl.containsPrimeNumbers(testData3), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testThreads4() {
+        assertEquals(ThreadsImpl.containsPrimeNumbers(testData4), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testThreads5() {
+        assertEquals(ThreadsImpl.containsPrimeNumbers(testData5), false)
+    }
+
+    @Test
+    @Benchmark
+    fun testThreads6() {
+        assertEquals(ThreadsImpl.containsPrimeNumbers(testData6), false)
     }
 }
