@@ -1,11 +1,10 @@
 package ru.nsu.fit.konstantinov.task_2_1_1.implementations
 
 import ru.nsu.fit.konstantinov.task_2_1_1.PrimeNumbers
-import kotlin.math.sqrt
 
 class ThreadsImpl {
     companion object : PrimeNumbers {
-        private var numberOfThreads = 5
+        private var numberOfThreads = Runtime.getRuntime().availableProcessors()
 
         override fun containsPrimeNumbers(array: ArrayList<Int>): Boolean {
             val customThread = CustomThread(array)
@@ -26,40 +25,26 @@ class ThreadsImpl {
     }
 
     private class CustomThread(array: ArrayList<Int>): Runnable {
-        fun isPrimeNumber(number: Int): Boolean {
-            var result = false
-            for (i in 2..sqrt(number.toDouble()).toInt() + 1) {
-                if (number % i == 0) {
-                    result = true
-                    break
-                }
-            }
-            return result
-        }
-
         private val iterator: Iterator<Int> = array.iterator()
         var result = false
 
         override fun run() {
-            var number: Int?
-            while (next.also { number = it } != null) {
-                if (number?.let { isPrimeNumber(it) } == true) {
-                    result = true
-                }
-            }
+            do {
+                val number = next() ?: break
+                result = isPrimeNumber(number)
+            } while (true)
         }
 
-        private val next: Int?
-            get() {
-                if (result) {
-                    return null
-                }
-                synchronized(iterator) {
-                    if (iterator.hasNext()) {
-                        return iterator.next()
-                    }
-                }
+        private fun next(): Int? {
+            if (result) {
                 return null
             }
+            synchronized(iterator) {
+                if (iterator.hasNext()) {
+                    return iterator.next()
+                }
+            }
+            return null
+        }
     }
 }
