@@ -6,11 +6,11 @@ import ru.nsu.fit.konstantinov.task_2_2_1.persons.Courier
 import ru.nsu.fit.konstantinov.task_2_2_1.pizzeria.order.Order
 import ru.nsu.fit.konstantinov.task_2_2_1.pizzeria.order.OrderCreator
 import ru.nsu.fit.konstantinov.task_2_2_1.pizzeria.order.OrderGetter
-import ru.nsu.fit.konstantinov.task_2_2_1.utils.notifyAll
-import ru.nsu.fit.konstantinov.task_2_2_1.utils.wait
 import ru.nsu.fit.konstantinov.task_2_2_1.work.BakerWork
 import ru.nsu.fit.konstantinov.task_2_2_1.work.CourierWork
 import ru.nsu.fit.konstantinov.task_2_2_1.work.CustomerWork
+import java.util.concurrent.locks.ReentrantLock
+import kotlin.concurrent.withLock
 
 class Pizzeria(configModel: ConfigModel) : Runnable, OrderGetter, OrderCreator {
     private val orders: ArrayDeque<Order> = ArrayDeque()
@@ -29,6 +29,9 @@ class Pizzeria(configModel: ConfigModel) : Runnable, OrderGetter, OrderCreator {
         }
     })
 
+    private val lock = ReentrantLock()
+    private val condition = lock.newCondition()
+
     override fun run() {
         bakerWork.run()
         courierWork.run()
@@ -45,7 +48,9 @@ class Pizzeria(configModel: ConfigModel) : Runnable, OrderGetter, OrderCreator {
         customerWork.stopWork()
         bakerWork.stopWork()
         courierWork.stopWork()
-        notifyAll()
+        lock.withLock {
+            condition.signalAll()
+        }
     }
 
     private var orderNumber = 0
@@ -53,21 +58,24 @@ class Pizzeria(configModel: ConfigModel) : Runnable, OrderGetter, OrderCreator {
     @Synchronized
     override fun createOrder(pizzaCount: Int) {
         val order = Order(orderNumber++, pizzaCount).apply {
-            customer = Runnable { println("Order ${order.id} was successfully delivered") }
+            customer = Runnable { println("Order ${getOrder().id} was successfully delivered") }
         }
         orders.add(order)
         println("Pizzeria received order with number ${order.id}")
-        notifyAll()
+        lock.withLock {
+            condition.signalAll()
+        }
     }
 
-    override val order: Order
-        @Synchronized get() {
-            while (orders.isEmpty()) {
-                wait()
+    @Synchronized
+    override fun getOrder(): Order {
+        while (orders.isEmpty()) {
+            lock.withLock {
+                condition.await()
             }
-            return orders.removeFirst()
         }
+        return orders.removeFirst()
+    }
 
-    override val isNoOrders: Boolean
-        get() = orders.isEmpty()
+    override fun isNoOrders(): Boolean = orders.isEmpty()
 }
