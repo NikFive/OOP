@@ -11,7 +11,7 @@ import kotlin.test.assertEquals
 @Warmup(iterations = 0)
 @Measurement(iterations = 1, time = 1, timeUnit = TimeUnit.SECONDS)
 
-class PrimeNumbersTest {
+class MultiCoroutinesImplImplTest {
     val testData3 = arrayListOf(
         6997901,
         6997927,
@@ -79,7 +79,7 @@ class PrimeNumbersTest {
         6997967,
         6998009,
     ).apply {
-        for (i in 0..20000) {
+        for (i in 0..200000) {
             this.addAll(
                 arrayListOf(
                     6997901,
@@ -94,121 +94,97 @@ class PrimeNumbersTest {
 
     @Test
     @Benchmark
-    fun testSerial3() {
-        assertEquals(SerialImpl.containsPrimeNumbers(testData3), false)
+    fun testDefaultMultiCoroutines3() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData3), false)
     }
 
     @Test
     @Benchmark
-    fun testSerial4() {
-        assertEquals(SerialImpl.containsPrimeNumbers(testData4), false)
+    fun testDefaultMultiCoroutines4() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData4), false)
     }
 
     @Test
     @Benchmark
-    fun testSerial5() {
-        assertEquals(SerialImpl.containsPrimeNumbers(testData5), false)
+    fun testDefaultMultiCoroutines5() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData5), false)
     }
 
     @Test
     @Benchmark
-    fun testSerial6() {
-        assertEquals(SerialImpl.containsPrimeNumbers(testData6), false)
+    fun testDefaultMultiCoroutines6() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData6), false)
     }
 
     @Test
     @Benchmark
-    fun testMultyCoroutines3() {
-        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData3), false)
+    fun test16MultiCoroutines3() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData3, 16), false)
     }
 
     @Test
     @Benchmark
-    fun testMultyCoroutines4() {
-        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData4), false)
+    fun test16MultiCoroutines4() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData4, 16), false)
     }
 
     @Test
     @Benchmark
-    fun testMultyCoroutines5() {
-        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData5), false)
+    fun test16MultiCoroutines5() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData5, 16), false)
     }
 
     @Test
     @Benchmark
-    fun testMultyCoroutines6() {
-        assertEquals(MultyCoroutinesImpl.containsPrimeNumbers(testData6), false)
+    fun test16MultiCoroutines6() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData6, 16), false)
     }
 
     @Test
     @Benchmark
-    fun testCoroutines3() {
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData3), false)
+    fun test32MultiCoroutines3() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData3, 32), false)
     }
 
     @Test
     @Benchmark
-    fun testCoroutines4() {
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData4), false)
+    fun test32MultiCoroutines4() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData4, 32), false)
     }
 
     @Test
     @Benchmark
-    fun testCoroutines5() {
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData5), false)
+    fun test32MultiCoroutines5() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData5, 32), false)
     }
 
     @Test
     @Benchmark
-    fun testCoroutines6() {
-        assertEquals(CoroutinesImpl.containsPrimeNumbers(testData6), false)
+    fun test32MultiCoroutines6() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData6, 32), false)
     }
 
     @Test
     @Benchmark
-    fun testParallelStream3() {
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData3), false)
+    fun test64MultiCoroutines3() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData3, 64), false)
     }
 
     @Test
     @Benchmark
-    fun testParallelStream4() {
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData4), false)
+    fun test64MultiCoroutines4() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData4, 64), false)
     }
 
     @Test
     @Benchmark
-    fun testParallelStream5() {
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData5), false)
+    fun test64MultiCoroutines5() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData5, 64), false)
     }
 
     @Test
     @Benchmark
-    fun testParallelStream6() {
-        assertEquals(ParallelStreamImpl.containsPrimeNumbers(testData6), false)
-    }
-
-    @Test
-    @Benchmark
-    fun testThreads3() {
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testData3), false)
-    }
-
-    @Test
-    @Benchmark
-    fun testThreads4() {
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testData4), false)
-    }
-
-    @Test
-    @Benchmark
-    fun testThreads5() {
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testData5), false)
-    }
-
-    @Test
-    @Benchmark
-    fun testThreads6() {
-        assertEquals(ThreadsImpl.containsPrimeNumbers(testData6), false)
+    fun test64MultiCoroutines6() {
+        assertEquals(MultiCoroutinesImpl.containsPrimeNumbers(testData6, 64), false)
     }
 }
