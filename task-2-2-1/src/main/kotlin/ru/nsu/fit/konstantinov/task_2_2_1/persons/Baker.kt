@@ -11,7 +11,7 @@ class Baker(private val warehouse: Warehouse, private val orderGetter: OrderGett
         while (true) {
             try {
                 println("Baker is running: $this")
-                val order = orderGetter.order.apply { pizza = cookPizza(this) }
+                val order = orderGetter.getOrder().apply { pizza = cookPizza(this) }
                 warehouse.addPizza(order)
             } catch (e: InterruptedException) {
                 println("Baker was interrupted")

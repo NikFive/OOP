@@ -1,28 +1,39 @@
 package ru.nsu.fit.konstantinov.task_2_2_1.pizzeria
 
 import ru.nsu.fit.konstantinov.task_2_2_1.pizzeria.order.Order
-import ru.nsu.fit.konstantinov.task_2_2_1.utils.notifyAll
-import ru.nsu.fit.konstantinov.task_2_2_1.utils.wait
+import java.util.concurrent.locks.ReentrantLock
+import kotlin.concurrent.withLock
 
 class Warehouse(private val capacity: Int) {
     private val pizzas: ArrayDeque<Order> = ArrayDeque(capacity)
 
+    private val lock = ReentrantLock()
+    private val condition = lock.newCondition()
+
     @Synchronized
     fun addPizza(order: Order) {
         while (isFull()) {
-            this.wait()
+            lock.withLock {
+                condition.await()
+            }
         }
         pizzas.add(order)
-        notifyAll()
+        lock.withLock {
+            condition.signalAll()
+        }
     }
 
     val pizza: Order
         @Synchronized
         get() {
             while (isEmpty()) {
-                this.wait()
+                lock.withLock {
+                    condition.await()
+                }
             }
-            notifyAll()
+            lock.withLock {
+                condition.signalAll()
+            }
             return pizzas.removeFirst()
         }
 

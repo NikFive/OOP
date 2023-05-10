@@ -50,7 +50,7 @@ class PizzeriaTest {
         assertFalse(warehouse.isFull())
 
         Thread.sleep((bakerModel.cookingTime + 100).toLong())
-        assertTrue(pizzeria.isNoOrders)
+        assertTrue(pizzeria.isNoOrders())
         assertTrue(warehouse.isFull())
 
         val courierThread = Thread(Courier(warehouse, courierModel.bagCapacity, courierModel.deliveryTime))
@@ -72,18 +72,18 @@ class PizzeriaTest {
         val pizzeria =
             Pizzeria(getConfigModelFromFile("src/test/resources/ru.nsu.fit.konstantinov.task_2_2_1/PizzeriaTestConfig.json"))
 
-        assertTrue(pizzeria.isNoOrders)
+        assertTrue(pizzeria.isNoOrders())
         val customerWork = CustomerWork(pizzeria)
         val customerWorkThread = Thread(customerWork)
         customerWorkThread.start()
         Thread.sleep(100)
-        assertFalse(pizzeria.isNoOrders)
+        assertFalse(pizzeria.isNoOrders())
         customerWork.stopWork()
-        while (!pizzeria.isNoOrders) {
-            pizzeria.order
+        while (!pizzeria.isNoOrders()) {
+            pizzeria.getOrder()
         }
         Thread.sleep(300)
-        assertTrue(pizzeria.isNoOrders)
+        assertTrue(pizzeria.isNoOrders())
         println(customerWorkThread.isAlive)
     }
 
@@ -95,14 +95,14 @@ class PizzeriaTest {
         val customerThread = Thread(Customer(pizzeria, 1))
         customerThread.start()
         Thread.sleep(100)
-        assertFalse(pizzeria.isNoOrders)
+        assertFalse(pizzeria.isNoOrders())
         customerThread.interrupt()
 
         val bakerWork = pizzeria.bakerWork
         val bakerWorkThread = Thread(bakerWork)
         bakerWorkThread.start()
         Thread.sleep(10000)
-        assertTrue(pizzeria.isNoOrders)
+        assertTrue(pizzeria.isNoOrders())
 
         bakerWork.stopWork()
         Thread.sleep(100)
