@@ -1,7 +1,7 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
 $dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/CoroutinesImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/CoroutinesImpl.Companion.html
-$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/MultyCoroutinesImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/MultyCoroutinesImpl.Companion.html
+$dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/MultiCoroutinesImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/MultiCoroutinesImpl.Companion.html
 $dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/ParallelStreamImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/ParallelStreamImpl.Companion.html
 $dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/SerialImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/SerialImpl.Companion.html
 $dokka.location:ru.nsu.fit.konstantinov.task_2_1_1.implementations/ThreadsImpl.Companion///PointingToDeclaration/ru/nsu/fit/konstantinov/task_2_1_1/implementations/ThreadsImpl.Companion.html
