@@ -38,43 +38,43 @@ class Pizzeria(configModel: ConfigModel) : Runnable, OrderGetter, OrderCreator {
         customerWork.run()
     }
 
-    @Synchronized
     fun forceClosing() {
-        customerWork.stopWork()
+        lock.withLock {
+            customerWork.stopWork()
+        }
     }
 
-    @Synchronized
     fun gracefulClosing() {
-        customerWork.stopWork()
-        bakerWork.stopWork()
-        courierWork.stopWork()
         lock.withLock {
+            customerWork.stopWork()
+            bakerWork.stopWork()
+            courierWork.stopWork()
+
             condition.signalAll()
         }
     }
 
     private var orderNumber = 0
 
-    @Synchronized
     override fun createOrder(pizzaCount: Int) {
-        val order = Order(orderNumber++, pizzaCount).apply {
-            customer = Runnable { println("Order ${getOrder().id} was successfully delivered") }
-        }
-        orders.add(order)
-        println("Pizzeria received order with number ${order.id}")
         lock.withLock {
+            val order = Order(orderNumber++, pizzaCount).apply {
+                customer = Runnable { println("Order ${getOrder().id} was successfully delivered") }
+            }
+            orders.add(order)
+            println("Pizzeria received order with number ${order.id}")
             condition.signalAll()
         }
     }
 
-    @Synchronized
     override fun getOrder(): Order {
-        while (orders.isEmpty()) {
-            lock.withLock {
+        lock.withLock {
+            while (orders.isEmpty()) {
                 condition.await()
+
             }
+            return orders.removeFirst()
         }
-        return orders.removeFirst()
     }
 
     override fun isNoOrders(): Boolean = orders.isEmpty()

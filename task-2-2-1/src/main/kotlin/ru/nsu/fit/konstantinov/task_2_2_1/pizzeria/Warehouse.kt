@@ -10,31 +10,26 @@ class Warehouse(private val capacity: Int) {
     private val lock = ReentrantLock()
     private val condition = lock.newCondition()
 
-    @Synchronized
+
     fun addPizza(order: Order) {
-        while (isFull()) {
-            lock.withLock {
+        lock.withLock {
+            while (isFull()) {
                 condition.await()
             }
-        }
-        pizzas.add(order)
-        lock.withLock {
+            pizzas.add(order)
             condition.signalAll()
         }
     }
 
     val pizza: Order
-        @Synchronized
         get() {
-            while (isEmpty()) {
-                lock.withLock {
+            lock.withLock {
+                while (isEmpty()) {
                     condition.await()
                 }
-            }
-            lock.withLock {
                 condition.signalAll()
+                return pizzas.removeFirst()
             }
-            return pizzas.removeFirst()
         }
 
     fun isFull(): Boolean = pizzas.size == capacity

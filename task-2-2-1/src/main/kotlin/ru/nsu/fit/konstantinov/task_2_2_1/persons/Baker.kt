@@ -22,7 +22,7 @@ class Baker(private val warehouse: Warehouse, private val orderGetter: OrderGett
     private fun cookPizza(order: Order): Pizza {
         Thread.sleep(cookingTime.toLong())
         val pizza = Pizza()
-        println("Baker $this are cooking pizza for order ${order.id}")
+        println("Baker $this are cooking pizza for order $order")
         return pizza
     }
 }

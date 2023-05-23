@@ -85,6 +85,8 @@ class PizzeriaTest {
         Thread.sleep(300)
         assertTrue(pizzeria.isNoOrders())
         println(customerWorkThread.isAlive)
+
+        pizzeria.forceClosing()
     }
 
     @Test
@@ -118,5 +120,7 @@ class PizzeriaTest {
         courierWork.stopWork()
         Thread.sleep(100)
         assertFalse(courierWorkThread.isAlive)
+
+        pizzeria.gracefulClosing()
     }
 }
