@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language JavaScript?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane" prefHeight="600" prefWidth="600"
+            stylesheets="gameStyleSheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea">
+    <Label alignment="CENTER" prefHeight="600.0" prefWidth="600.0" text="GAME OVER"/>
+</AnchorPane>
