@@ -23,6 +23,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
+    implementation("com.googlecode.lanterna:lanterna:3.2.0-alpha1")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 tasks.test {

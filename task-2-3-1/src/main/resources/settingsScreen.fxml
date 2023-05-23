@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="settingsPane" prefHeight="300" prefWidth="400"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="ru.nsu.fit.konstantinov.view.fxml.SettingsView">
+    <VBox layoutX="105.0" layoutY="66.0" spacing="10.0" stylesheets="gameStyleSheet.css" AnchorPane.bottomAnchor="20.0"
+          AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="360.0" text="Settings"/>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="374.0" styleClass="labelSmall"
+               text="Difficulty" textAlignment="CENTER">
+            <font>
+                <Font size="8.0"/>
+            </font>
+        </Label>
+        <HBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="360.0">
+            <RadioButton fx:id="radioButton1" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false"
+                         prefHeight="18.0" prefWidth="80.0" selected="true" text="Easy">
+                <toggleGroup>
+                    <ToggleGroup fx:id="difficulty"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButton2" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Normal"
+                         toggleGroup="$difficulty"/>
+            <RadioButton fx:id="radioButton3" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" text="Hard"
+                         toggleGroup="$difficulty"/>
+        </HBox>
+        <VBox prefHeight="66.0" prefWidth="360.0">
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="362.0" styleClass="labelSmall" text="Theme">
+                <font>
+                    <Font size="8.0"/>
+                </font>
+            </Label>
+            <ChoiceBox fx:id="colorChoice" prefHeight="26.0" prefWidth="374.0" value="Light">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Light"/>
+                        <String fx:value="Dark"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+        </VBox>
+        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="26.0"
+                prefWidth="377.0" text="Save"/>
+        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="26.0"
+                prefWidth="380.0" text="Back"/>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,35 @@
+.root {
+    -fx-background-color: lightgrey;
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-font-family: "Styrene A LC";
+    -fx-text-fill: black;
+    -fx-alignment: center;
+}
+
+.button {
+    -fx-background-color: rgb(122, 193, 218);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-family: "Styrene A LC";
+    -fx-font-size: 16px;
+    -fx-padding: 6px 16px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-end-margin: 6px;
+}
+
+.button:hover {
+    -fx-background-color: #0D47AF;
+}
+
+.button:pressed {
+    -fx-background-color: #0D47A0;
+}
+
+.labelSmall {
+    -fx-font-size: 12px;
+}
