@@ -1,8 +1,8 @@
 package ru.nsu.fit.konstantinov.dto.fxml
 
-import javafx.scene.paint.Color
 import ru.nsu.fit.konstantinov.model.pixel.PixelType
+import ru.nsu.fit.konstantinov.utils.GameConfiguration
 
-class FXMLFoodDto(x: Int, y: Int) : FXMLDto(x, y, Color.rgb(247, 163, 111)) {
+class FXMLFoodDto(x: Int, y: Int) : FXMLDto(x, y, GameConfiguration.gameConfiguration.foodColor) {
     override var pixelType: PixelType? = PixelType.FOOD
 }

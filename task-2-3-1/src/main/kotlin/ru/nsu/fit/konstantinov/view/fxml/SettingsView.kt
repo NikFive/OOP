@@ -6,18 +6,14 @@ import javafx.scene.control.ChoiceBox
 import javafx.scene.control.RadioButton
 import javafx.scene.control.ToggleGroup
 import javafx.scene.layout.AnchorPane
-import javafx.scene.paint.Color
 import ru.nsu.fit.konstantinov.utils.GameConfiguration
 import ru.nsu.fit.konstantinov.utils.SceneManager
+import ru.nsu.fit.konstantinov.utils.themes.DarkTheme
+import ru.nsu.fit.konstantinov.utils.themes.LightTheme
 
 
 class SettingsView {
     private val sceneManager = SceneManager()
-
-    private val stringToTheme: MutableMap<String, Color> = HashMap<String, Color>().apply {
-        this["Light"] = Color.WHITE
-        this["Dark"] = Color.BLACK
-    }
 
     @FXML
     lateinit var difficulty: ToggleGroup
@@ -45,18 +41,30 @@ class SettingsView {
 
     @FXML
     fun handleSaveButton() {
-        val value: Double
-        if (radioButton1.isSelected) {
-            value = 1.0
+        val value: Double = if (radioButton1.isSelected) {
+            1.0
         } else if (radioButton2.isSelected) {
-            value = 2.0
+            2.0
         } else {
-            value = 3.0
+            3.0
         }
         GameConfiguration.gameConfiguration.gameSpeed = value
         val colorString = colorChoice.value
-        val color = stringToTheme[colorString]
-        GameConfiguration.gameConfiguration.snakeColor = color!!
+        if (colorString == "Light") {
+            GameConfiguration.gameConfiguration.apply {
+                snakeColor = LightTheme.snakeColor
+                foodColor = LightTheme.foodColor
+                wallColor = LightTheme.wallColor
+                backgroundColor = LightTheme.backgroundColor
+            }
+        } else {
+            GameConfiguration.gameConfiguration.apply {
+                snakeColor = DarkTheme.snakeColor
+                foodColor = DarkTheme.foodColor
+                wallColor = DarkTheme.wallColor
+                backgroundColor = DarkTheme.backgroundColor
+            }
+        }
     }
 
     @FXML

@@ -2,6 +2,7 @@ package ru.nsu.fit.konstantinov.utils
 
 import com.google.gson.GsonBuilder
 import javafx.scene.paint.Color
+import ru.nsu.fit.konstantinov.utils.themes.LightTheme
 import java.io.FileReader
 
 class GameConfiguration {
@@ -13,7 +14,16 @@ class GameConfiguration {
     var extraWalls = 0
 
     @Transient
-    var snakeColor = Color.rgb(122, 193, 218)!!
+    var snakeColor: Color = LightTheme.snakeColor
+
+    @Transient
+    var wallColor: Color = LightTheme.wallColor
+
+    @Transient
+    var backgroundColor: Color = LightTheme.backgroundColor
+
+    @Transient
+    var foodColor: Color = LightTheme.foodColor
 
     @Transient
     var gameSpeed = 1.0
