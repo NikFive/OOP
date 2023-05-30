@@ -1,6 +1,6 @@
 {
-  "consoleScreenWidth": 100,
-  "consoleScreenHeight": 100,
+  "consoleScreenWidth": 30,
+  "consoleScreenHeight": 30,
   "foodCount": 5,
   "defaultBlockSize": 10,
   "pixelHeight": 30,

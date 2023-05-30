@@ -24,51 +24,51 @@ class ConsoleView(override var sceneManager: SceneManager = SceneManager()) : Vi
         createScene()
         it.start()
     }
-    private var screen: Screen? = null
-    private var graphics: TextGraphics? = null
-    private var terminal: Terminal? = null
+    private lateinit var screen: Screen
+    private lateinit var graphics: TextGraphics
+    private lateinit var terminal: Terminal
 
     private fun createScene() {
         terminal = DefaultTerminalFactory()
             .setInitialTerminalSize(TerminalSize(columnsCount, rowsCount))
             .createTerminal()
         screen = TerminalScreen(terminal)
-        graphics = terminal!!.newTextGraphics()
-        terminal!!.setCursorVisible(false)
+        graphics = terminal.newTextGraphics()
+        terminal.setCursorVisible(false)
     }
 
     override fun endGame() {
-        terminal!!.clearScreen()
-        graphics!!.putString(TerminalPosition.OFFSET_1x1, "GAME OVER")
-        terminal!!.flush()
-        screen!!.refresh()
+        terminal.clearScreen()
+        graphics.putString(TerminalPosition.OFFSET_1x1, "GAME OVER")
+        terminal.flush()
+        screen.refresh()
         var keyStroke: KeyStroke?
         do {
-            keyStroke = screen!!.pollInput()
+            keyStroke = screen.pollInput()
         } while (keyStroke == null)
         exitProcess(0)
     }
 
     override fun clearScreen() {
-        screen!!.clear()
-        terminal!!.clearScreen()
+        screen.clear()
+        terminal.clearScreen()
     }
 
     override fun render() {
         val consoleDtoList = presenter.getDtoList()
         consoleDtoList.forEach { dto: ConsoleDto -> renderDto(dto) }
-        terminal!!.flush()
-        screen!!.refresh()
+        terminal.flush()
+        screen.refresh()
     }
 
-    private fun renderDto(dto: ConsoleDto?) {
-        graphics!!.drawLine(dto!!.x, dto.y, dto.x, dto.y, dto.character)
+    private fun renderDto(dto: ConsoleDto) {
+        graphics.drawLine(dto.x, dto.y, dto.x, dto.y, dto.character)
     }
 
     override fun setTimer(gameStep: Runnable): Timer {
         return ConsoleTimer(Thread {
             while (true) {
-                val keyStroke = screen!!.pollInput()
+                val keyStroke = screen.pollInput()
                 if (keyStroke != null) {
                     presenter.handleKey(keyStroke)
                 }

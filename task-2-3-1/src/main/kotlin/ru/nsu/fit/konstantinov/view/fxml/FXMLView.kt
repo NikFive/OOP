@@ -10,7 +10,6 @@ import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
 import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.VBox
-import javafx.scene.paint.Color
 import ru.nsu.fit.konstantinov.dto.fxml.FXMLDto
 import ru.nsu.fit.konstantinov.presenter.FXMLPresenter
 import ru.nsu.fit.konstantinov.timer.FXMLTimer
@@ -66,7 +65,7 @@ class FXMLView(override var sceneManager: SceneManager = SceneManager()) : Initi
     }
 
     override fun clearScreen() {
-        gameCanvas.graphicsContext2D.fill = Color.rgb(245, 245, 245)!!
+        gameCanvas.graphicsContext2D.fill = GameConfiguration.gameConfiguration.backgroundColor
         gameCanvas.graphicsContext2D.fillRect(0.0, 0.0, 1000.0, 1000.0)
     }
 
