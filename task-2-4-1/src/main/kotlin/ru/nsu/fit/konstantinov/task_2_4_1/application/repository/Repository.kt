@@ -1,18 +1,17 @@
-package ru.nsu.fit.konstantinov.task_2_4_1.git
+package ru.nsu.fit.konstantinov.task_2_4_1.application.repository
 
 import org.eclipse.jgit.api.Git
 import org.eclipse.jgit.api.errors.JGitInternalException
 import org.eclipse.jgit.api.errors.RefNotFoundException
 import org.eclipse.jgit.revwalk.filter.CommitTimeRevFilter
 import org.eclipse.jgit.transport.URIish
-import ru.nsu.fit.konstantinov.task_2_4_1.dsl.models.Student
+import ru.nsu.fit.konstantinov.task_2_4_1.application.config.Config
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.*
-import javax.script.ScriptEngineManager
 
-class WorkWithGit {
+class Repository {
     fun pullRepo(name: String, branch: String) {
         val git = Git.open(File("./repos/$name"))
         try {
@@ -21,13 +20,6 @@ class WorkWithGit {
             git.checkout().setCreateBranch(true).setName(branch).call()
             git.checkout().setName(branch).call()
         }
-        try {
-            git.pull().remote = name
-            git.pull().call()
-        } catch (e: Exception) {
-            e.printStackTrace()
-            return
-        }
     }
 
     fun cloneRepo(name: String) {
@@ -35,7 +27,7 @@ class WorkWithGit {
         if (!Files.isDirectory(Paths.get("./repos/$name"))) {
             Files.createDirectories(Paths.get("./repos/$name"))
         }
-        val student = configureStudent(name)
+        val student = Config().readConfig("$name.kts")
         try {
             Git.cloneRepository()
                 .setURI(student.repoUrl)
@@ -54,14 +46,5 @@ class WorkWithGit {
         val between = CommitTimeRevFilter.between(monday, sunday)
         val revCommit = git.log().setRevFilter(between).call()
         return revCommit.count() > 0
-    }
-
-    private fun configureStudent(name: String): Student {
-        val textConfig = File("./configs/$name.kts").readText()
-        var scriptResult: Student
-        with(ScriptEngineManager().getEngineByExtension("kts")) {
-            scriptResult = eval(textConfig) as Student
-        }
-        return scriptResult
     }
 }

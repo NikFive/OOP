@@ -1,8 +1,8 @@
-package ru.nsu.fit.konstantinov.task_2_4_1.attendance
+package ru.nsu.fit.konstantinov.task_2_4_1.application.attendance
 
+import ru.nsu.fit.konstantinov.task_2_4_1.application.repository.Repository
 import ru.nsu.fit.konstantinov.task_2_4_1.dsl.models.Group
 import ru.nsu.fit.konstantinov.task_2_4_1.dsl.models.Student
-import ru.nsu.fit.konstantinov.task_2_4_1.git.WorkWithGit
 import java.io.File
 import java.text.SimpleDateFormat
 import java.time.DayOfWeek
@@ -39,18 +39,19 @@ class Attendance {
             println("You don't have students of this group")
             return
         }
-        val workWithGit = WorkWithGit()
+        val repository = Repository()
         studentsInGroup.forEach {
-            workWithGit.pullRepo(it.name, task)
+            repository.pullRepo(it.name, task)
         }
         val dateOfLesson =
             SimpleDateFormat("dd-MM-yyyy").parse(date).toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+
         val monday =
             Date.from(dateOfLesson.with(DayOfWeek.MONDAY).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
         val sunday =
             Date.from(dateOfLesson.with(DayOfWeek.SUNDAY).atStartOfDay().atZone(ZoneId.systemDefault()).toInstant())
         studentsInGroup.forEach {
-            if (workWithGit.logStudentsAttendance(monday, sunday, it.name)) {
+            if (repository.logStudentsAttendance(monday, sunday, it.name)) {
                 println("\u001B[32mStudent ${it.name} was on this lesson. You can add lesson $date to config\u001B[0m")
             } else {
                 println("\u001B[31mStudent ${it.name} was absent. You can add lesson $date to config\u001B[0m")
